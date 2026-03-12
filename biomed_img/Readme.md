@@ -1,1 +1,0 @@
-# Bioimage informatics
