@@ -15,6 +15,7 @@ Phase 05 moves beyond static medical scans and image-processing pipelines to foc
 | 3 | [`RLBench`](RLBench/) | RLBench simulator architecture, design principles, waypoints & motion planning, observation & action spaces, standard RL loop, and few-shot challenges | `RLBench_Tutorial.ipynb`<br>`RLBench_Research_Improvements.ipynb` | No |
 | 4 | [`DiffusionPolicy`](DiffusionPolicy/) | Diffusion Policy architecture, action diffusion models, noise scheduling, and bimanual visuomotor policy training | `diffusion_policy_tutorial.ipynb` | Yes |
 | 5 | [`CALVIN`](CALVIN/) | CALVIN simulator architecture, language-conditioned policy, unstructured play data, goal relabeling, and long-horizon chaining metric | `calvin_tutorial.ipynb` | No |
+| 6 | [`CartPoleDQN`](CartPoleDQN/) | Deep Q-Networks from raw pixels — frame stacking, CNN Q-network, experience replay, ε-greedy exploration, and the deep Q-learning training loop | `CartPoleDQN.ipynb` | Optional (T4) |
 
 ---
 
@@ -66,6 +67,16 @@ This module introduces **CALVIN** (Mees et al., 2022), a language-conditioned lo
 
 ---
 
+### Module 06 — CartPole DQN: Deep Q-Learning from Raw Pixels
+
+The learned policies in earlier modules rest on foundations from deep reinforcement learning. This module reconstructs the core idea of **DQN** (Mnih et al., 2013): a convolutional network trained with Q-learning plus an experience-replay memory that learns control **directly from screen pixels**. To fit the Colab free tier, the same algorithm and CNN are trained on **CartPole rendered as pixels**, which converges in minutes while still learning from raw images.
+
+You will follow the path from Q-learning to deep Q-learning, preprocess and stack frames to recover temporal information, implement the CNN Q-network, and use experience replay and ε-greedy exploration to stabilize training. The full training loop (Algorithm 1) is logged with reward curves and rendered policy rollouts.
+
+**Key skills:** Value-based RL, function approximation, frame preprocessing/stacking, experience replay, ε-greedy exploration, temporal-difference targets, deep Q-learning training loop.
+
+---
+
 ## Learning Goals
 
 After completing Phase 05 you will be able to:
@@ -84,6 +95,8 @@ After completing Phase 05 you will be able to:
 - Describe the Diffusion Policy architecture and how action diffusion models predict multi-modal action trajectories
 - Explain goal relabeling on unstructured play data for language-conditioned robot manipulation
 - Calculate the long-horizon chaining metric to measure sequential task completion and compounding errors
+- Trace the path from tabular Q-learning to deep Q-learning with a neural function approximator
+- Implement a DQN that learns control from raw pixels using frame stacking, experience replay, and ε-greedy exploration
 
 ---
 
