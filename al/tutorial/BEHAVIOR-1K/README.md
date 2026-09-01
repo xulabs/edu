@@ -19,5 +19,5 @@ Teaching robots everyday household activities requires high-fidelity physics sim
 
 | File | Description |
 |------|-------------|
-| [`BEHAVIOR-1K_tutorial.ipynb`](BEHAVIOR-1K_tutorial.ipynb) | Overview of BEHAVIOR-1K, task specification using BDDL, and structural comparison with the LIBERO benchmark. |
-| [`BEHAVIOR-1K_Improved.ipynb`](BEHAVIOR-1K_Improved.ipynb) | An improved and extended walkthrough of the BEHAVIOR-1K environment and logic. |
+| [`behavior_1k_tutorial.ipynb`](behavior_1k_tutorial.ipynb) | Overview of BEHAVIOR-1K, task specification using BDDL, and structural comparison with the LIBERO benchmark. |
+| [`behavior_1k_improved.ipynb`](behavior_1k_improved.ipynb) | An improved and extended walkthrough of the BEHAVIOR-1K environment and logic. |

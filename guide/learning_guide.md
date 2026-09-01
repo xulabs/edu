@@ -46,9 +46,9 @@ Then study:
 
 | Order | Tutorial                                    | What to learn                                                    |
 | ----: | ------------------------------------------- | ---------------------------------------------------------------- |
-|     5 | `Corner_Detection_Tutorial.ipynb`           | Detecting key points and local image structure                   |
+|     5 | `corner_detection_tutorial.ipynb`           | Detecting key points and local image structure                   |
 |     6 | `line_curve_detection.ipynb`                | Detecting geometric structures such as lines and curves          |
-|     7 | `Image_Pyramids_and_Frequency_Domain.ipynb` | Multi-scale analysis, image pyramids, frequency-domain intuition |
+|     7 | `image_pyramids_and_frequency_domain.ipynb` | Multi-scale analysis, image pyramids, frequency-domain intuition |
 
 These are also part of the `sci_img/tutorial` notebook set. ([GitHub][3])
 
@@ -64,7 +64,7 @@ Next:
 | Order | Tutorial                              | What to learn                             |
 | ----: | ------------------------------------- | ----------------------------------------- |
 |     8 | `image_translation.ipynb`             | Simple image shifts and alignment         |
-|     9 | `Image_Registration.ipynb`            | General image registration                |
+|     9 | `image_registration.ipynb`            | General image registration                |
 |    10 | `multimodal_image_registration.ipynb` | Aligning images from different modalities |
 
 These registration-related notebooks are listed in the scientific image tutorial folder. ([GitHub][3])
@@ -83,7 +83,7 @@ Then move to the core bioimage-analysis tasks:
 |    11 | `segmentation_geo_modified.ipynb` | Classical/geometric segmentation                 |
 |    12 | `segmentation_deep.ipynb`         | Deep-learning segmentation                       |
 |    13 | `object_detection.ipynb`          | Locating objects instead of labeling every pixel |
-|    14 | `LAP_LapTrack.ipynb`              | Tracking objects across frames                   |
+|    14 | `lap_laptrack.ipynb`              | Tracking objects across frames                   |
 
 These notebooks are all listed under `sci_img/tutorial`. ([GitHub][3])
 
@@ -123,8 +123,8 @@ Then do the more applied notebooks:
 
 | Order | Tutorial                                        | What to learn                                 |
 | ----: | ----------------------------------------------- | --------------------------------------------- |
-|    18 | `AI-Driven Clinical Diagnostic Assistant.ipynb` | Medical/clinical AI workflow                  |
-|    19 | `SB_CFM_Medical_Synthesis.ipynb`                | Medical image synthesis / generative modeling |
+|    18 | `ai_driven_clinical_diagnostic_assistant.ipynb` | Medical/clinical AI workflow                  |
+|    19 | `sb_cfm_medical_synthesis.ipynb`                | Medical image synthesis / generative modeling |
 |    20 | `academic_approach_medical_imaging_ml.ipynb`    | Rigorous dataset splitting, baseline comparisons, and avoiding data leakage |
 
 These notebooks are in the `sci_img/tutorial` folder. ([GitHub][3]) The repo’s tutorial guide also recommends clear educational/clinical disclaimers for medical tutorials, including that they are for research and education, not clinical diagnosis. ([GitHub][2])
@@ -166,11 +166,11 @@ You should understand why cryo-EM data are difficult, why low signal-to-noise ra
 | Week | Focus                           | Tutorials                                                                                        |
 | ---: | ------------------------------- | ------------------------------------------------------------------------------------------------ |
 |    1 | Image basics                    | `basic_operations`, `image_filtering`, `image_filtering_notebook`, `conv_edge_detection`         |
-|    2 | Features and frequency          | `Corner_Detection_Tutorial`, `line_curve_detection`, `Image_Pyramids_and_Frequency_Domain`       |
-|    3 | Registration                    | `image_translation`, `Image_Registration`, `multimodal_image_registration`                       |
-|    4 | Segmentation/detection/tracking | `segmentation_geo_modified`, `segmentation_deep`, `object_detection`, `LAP_LapTrack`             |
+|    2 | Features and frequency          | `corner_detection_tutorial`, `line_curve_detection`, `image_pyramids_and_frequency_domain`       |
+|    3 | Registration                    | `image_translation`, `image_registration`, `multimodal_image_registration`                       |
+|    4 | Segmentation/detection/tracking | `segmentation_geo_modified`, `segmentation_deep`, `object_detection`, `lap_laptrack`             |
 |    5 | ML for images                   | `introduction_to_pytorch`, `dimension_reduction_reconstruction`, `geometry_based_classification` |
-|    6 | Medical AI                      | `AI-Driven Clinical Diagnostic Assistant`, `SB_CFM_Medical_Synthesis`, `academic_approach_medical_imaging_ml` |
+|    6 | Medical AI                      | `ai_driven_clinical_diagnostic_assistant`, `sb_cfm_medical_synthesis`, `academic_approach_medical_imaging_ml` |
 |    7 | Cryo-EM                         | `cryoem_low_snr_tutorial`, `lowdose_em_denoising_tutorial`, `cryoem_reconstruction_tutorial`, `build_and_diagnose_tomogram`, `subtomogram_averaging_tutorial`, `missing_wedge_wbp_sirt_tutorial` |
 
 ---

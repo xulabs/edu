@@ -10,14 +10,14 @@ Phase 05 moves beyond static medical scans and image-processing pipelines to foc
 
 | # | Subfolder | Core topic | Notebooks | GPU needed? |
 |---|-----------|-----------|-----------|-------------|
-| 1 | [`AutoBioBenchmark`](AutoBioBenchmark/) | AutoBio simulator architecture, detent/thread physics plugins, SR/SSR metrics, VLA baselines | `AutoBio_Tutorial.ipynb`<br>`AutoBio_Threading_Physics_for_VLAs.ipynb` | No |
+| 1 | [`AutoBioBenchmark`](AutoBioBenchmark/) | AutoBio simulator architecture, detent/thread physics plugins, SR/SSR metrics, VLA baselines | `autobio_tutorial.ipynb`<br>`autobio_threading_physics_for_vlas.ipynb` | No |
 | 2 | [`AutoBioComputerVision`](AutoBioComputerVision/) | Multi-view reasoning, tube localization, slot symmetry, liquid-level sensing, closed-loop UI control | `autobio_cv.ipynb` | No |
-| 3 | [`RLBench`](RLBench/) | RLBench simulator architecture, design principles, waypoints & motion planning, observation & action spaces, standard RL loop, and few-shot challenges | `RLBench_Tutorial.ipynb`<br>`RLBench_Research_Improvements.ipynb` | No |
+| 3 | [`RLBench`](RLBench/) | RLBench simulator architecture, design principles, waypoints & motion planning, observation & action spaces, standard RL loop, and few-shot challenges | `rlbench_tutorial.ipynb`<br>`rlbench_research_improvements.ipynb` | No |
 | 4 | [`DiffusionPolicy`](DiffusionPolicy/) | Diffusion Policy architecture, action diffusion models, noise scheduling, and bimanual visuomotor policy training | `diffusion_policy_tutorial.ipynb` | Yes |
 | 5 | [`CALVIN`](CALVIN/) | CALVIN simulator architecture, language-conditioned policy, unstructured play data, goal relabeling, and long-horizon chaining metric | `calvin_tutorial.ipynb`<br>`calvin_tutorial_improved.ipynb` | No |
-| 6 | [`CartPoleDQN`](CartPoleDQN/) | Deep Q-Networks from raw pixels — frame stacking, CNN Q-network, experience replay, ε-greedy exploration, and the deep Q-learning training loop | `CartPoleDQN.ipynb` | Optional (T4) |
+| 6 | [`CartPoleDQN`](CartPoleDQN/) | Deep Q-Networks from raw pixels — frame stacking, CNN Q-network, experience replay, ε-greedy exploration, and the deep Q-learning training loop | `cartpole_dqn.ipynb` | Optional (T4) |
 | 7 | [`OpentronsOT2`](OpentronsOT2/) | Computer vision-based quality control pipeline for pipette tip detection, liquid volume regression, and closed-loop control | `ot2_qc_tutorial.ipynb` | No |
-| 8 | [`BEHAVIOR-1K`](BEHAVIOR-1K/) | BEHAVIOR-1K embodied AI benchmark, human-preference survey, BDDL activity definitions, and OmniGibson simulation | `BEHAVIOR-1K_tutorial.ipynb`<br>`BEHAVIOR-1K_Improved.ipynb` | No |
+| 8 | [`BEHAVIOR-1K`](BEHAVIOR-1K/) | BEHAVIOR-1K embodied AI benchmark, human-preference survey, BDDL activity definitions, and OmniGibson simulation | `behavior_1k_tutorial.ipynb`<br>`behavior_1k_improved.ipynb` | No |
 
 ---
 

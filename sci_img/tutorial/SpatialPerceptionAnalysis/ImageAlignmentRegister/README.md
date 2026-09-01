@@ -173,7 +173,7 @@ check `img.shape` and the metadata before assuming a channel layout.
 
 | File | Description |
 |------|-------------|
-| `Image_Registration.ipynb` | Synthetic two-modality phantom construction; MI vs MSE comparison as a function of ground-truth misalignment angle; SimpleITK rigid registration (gradient descent, Mattes MI, multi-resolution pyramid); affine registration as extension; transform parameter inspection; visual overlay evaluation; TRE computation on synthetic landmarks |
+| `image_registration.ipynb` | Synthetic two-modality phantom construction; MI vs MSE comparison as a function of ground-truth misalignment angle; SimpleITK rigid registration (gradient descent, Mattes MI, multi-resolution pyramid); affine registration as extension; transform parameter inspection; visual overlay evaluation; TRE computation on synthetic landmarks |
 | `image_translation.ipynb` | Out-of-focus / in-focus TIFF dataset construction; 16-bit normalisation pipeline; Pix2Pix architecture (U-Net generator + PatchGAN discriminator); GAN + L1 combined loss training; training curve and generated-image visualisation at checkpoints; held-out evaluation with PSNR and SSIM |
 
 ---

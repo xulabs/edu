@@ -37,8 +37,8 @@ Understanding how tasks are structured in RLBench:
 
 | File | Description |
 |------|-------------|
-| `RLBench_Tutorial.ipynb` | Conceptual and visual walkthrough of the RLBench paper. Includes comparative benchmark analysis, task/variation/episode hierarchies, observation/action spaces, OMPL motion planning demonstration pipeline, and hands-on visualization code. |
-| `RLBench_Research_Improvements.ipynb` | Conceptual tutorial and working implementations of three research improvements for RLBench: a learned task-embedding space using triplet loss metric learning, multimodal demonstration generation, and progress-based dense reward shaping via tabular Q-learning. |
+| `rlbench_tutorial.ipynb` | Conceptual and visual walkthrough of the RLBench paper. Includes comparative benchmark analysis, task/variation/episode hierarchies, observation/action spaces, OMPL motion planning demonstration pipeline, and hands-on visualization code. |
+| `rlbench_research_improvements.ipynb` | Conceptual tutorial and working implementations of three research improvements for RLBench: a learned task-embedding space using triplet loss metric learning, multimodal demonstration generation, and progress-based dense reward shaping via tabular Q-learning. |
 
 ---
 

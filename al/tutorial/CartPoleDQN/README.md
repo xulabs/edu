@@ -35,7 +35,7 @@ To fit Google Colab's free tier (T4, 16 GB), the notebook trains the *same algor
 
 | File | Description |
 |------|-------------|
-| `CartPoleDQN.ipynb` | End-to-end DQN implementation from raw pixels: frame preprocessing and stacking, the CNN Q-network, experience replay, ε-greedy exploration, the deep Q-learning training loop, and evaluation with reward curves and policy rollouts. |
+| `cartpole_dqn.ipynb` | End-to-end DQN implementation from raw pixels: frame preprocessing and stacking, the CNN Q-network, experience replay, ε-greedy exploration, the deep Q-learning training loop, and evaluation with reward curves and policy rollouts. |
 
 ---
 

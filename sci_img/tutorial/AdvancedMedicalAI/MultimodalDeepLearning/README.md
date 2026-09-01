@@ -29,7 +29,7 @@ This module introduces the key architectures and fusion strategies used to combi
 
 | File | Description |
 |------|-------------|
-| [`Multimodal_Deep_Learning_Medical_Imaging_Tutorial.ipynb`](Multimodal_Deep_Learning_Medical_Imaging_Tutorial.ipynb) | Conceptual and hands-on guide to building synthetic medical multimodal datasets, implementing early/late/cross-attention fusion models, performing contrastive pretraining, and testing robustness to missing modalities. |
+| [`multimodal_deep_learning_medical_imaging_tutorial.ipynb`](multimodal_deep_learning_medical_imaging_tutorial.ipynb) | Conceptual and hands-on guide to building synthetic medical multimodal datasets, implementing early/late/cross-attention fusion models, performing contrastive pretraining, and testing robustness to missing modalities. |
 
 ---
 

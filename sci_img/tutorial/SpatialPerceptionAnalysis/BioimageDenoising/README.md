@@ -31,7 +31,7 @@ This module introduces **Self-Supervised Denoising**, focusing on algorithms tha
 
 | File | Description |
 |------|-------------|
-| [`Self-Supervised Bioimage Denoising.ipynb`](Self-Supervised%20Bioimage%20Denoising.ipynb) | Full hands-on tutorial using the BBBC039 microscopy dataset: preparing low-light synthetic noise, establishing classical baselines, implementing Noise2Void/Noise2Self blind-spot masking, training a self-supervised denoiser, and evaluating structural preservation. |
+| [`self_supervised_bioimage_denoising.ipynb`](self_supervised_bioimage_denoising.ipynb) | Full hands-on tutorial using the BBBC039 microscopy dataset: preparing low-light synthetic noise, establishing classical baselines, implementing Noise2Void/Noise2Self blind-spot masking, training a self-supervised denoiser, and evaluating structural preservation. |
 
 ---
 

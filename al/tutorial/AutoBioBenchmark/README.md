@@ -33,8 +33,8 @@ To evaluate long-horizon tasks, AutoBio combines:
 
 | File | Description |
 |------|-------------|
-| `AutoBio_Tutorial.ipynb` | Conceptual and visual walkthrough of the AutoBio paper. Includes visualizations of helix and detent potentials, PBR rendering comparison, benchmark task hierarchies, and performance reviews of OpenVLA and RDT-1B baselines. |
-| `AutoBio_Threading_Physics_for_VLAs.ipynb` | Hands-on replication of threading mechanisms using MuJoCo SDF contact plugins. Verifies the physics-fidelity of SDF helix contact dynamics vs. kinematic coupling for bimanual cap-screwing. |
+| `autobio_tutorial.ipynb` | Conceptual and visual walkthrough of the AutoBio paper. Includes visualizations of helix and detent potentials, PBR rendering comparison, benchmark task hierarchies, and performance reviews of OpenVLA and RDT-1B baselines. |
+| `autobio_threading_physics_for_vlas.ipynb` | Hands-on replication of threading mechanisms using MuJoCo SDF contact plugins. Verifies the physics-fidelity of SDF helix contact dynamics vs. kinematic coupling for bimanual cap-screwing. |
 
 ---
 

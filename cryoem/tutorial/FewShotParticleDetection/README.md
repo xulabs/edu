@@ -20,4 +20,4 @@ Automatic particle picking in cryo-electron tomography (cryo-ET) is heavily bott
 
 | File | Description |
 |------|-------------|
-| [`Few-Shot CryoET Particle Detection with Weak Labels and Volume Infill.ipynb`](Few-Shot%20CryoET%20Particle%20Detection%20with%20Weak%20Labels%20and%20Volume%20Infill.ipynb) | End-to-end tutorial demonstrating spherical weak label construction, Volume Infill data augmentation, 3D CNN training, post-processing coordinates extraction, and metric evaluation on a synthetic tomogram. |
+| [`few_shot_cryoet_particle_detection_with_weak_labels_and_volume_infill.ipynb`](few_shot_cryoet_particle_detection_with_weak_labels_and_volume_infill.ipynb) | End-to-end tutorial demonstrating spherical weak label construction, Volume Infill data augmentation, 3D CNN training, post-processing coordinates extraction, and metric evaluation on a synthetic tomogram. |

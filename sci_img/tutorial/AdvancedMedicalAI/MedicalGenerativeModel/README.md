@@ -128,8 +128,8 @@ improve performance on rare pathology classes without any additional acquisition
 
 | File | Description |
 |------|-------------|
-| [`SB_CFM_Medical_Synthesis.ipynb`](SB_CFM_Medical_Synthesis.ipynb) | Full pipeline: synthetic IXI-style paired T1/T2 data generation, MONAI transform pipeline, SB-CFM training loop on 2-D slices, Euler and RK2 inference with step-count comparison, PSNR/SSIM/MAE evaluation, ODE trajectory visualisation, and rare-pathology augmentation demo |
-| [`Diffusion_for_Medical_Imaging.ipynb`](Diffusion_for_Medical_Imaging.ipynb) | Diffusion Foundations for Medical Imaging: From DDPM forward noising to DDIM fast sampling, closed-form forward process, linear noise schedule, noise-prediction network training, and faster DDIM sampling. |
+| [`sb_cfm_medical_synthesis.ipynb`](sb_cfm_medical_synthesis.ipynb) | Full pipeline: synthetic IXI-style paired T1/T2 data generation, MONAI transform pipeline, SB-CFM training loop on 2-D slices, Euler and RK2 inference with step-count comparison, PSNR/SSIM/MAE evaluation, ODE trajectory visualisation, and rare-pathology augmentation demo |
+| [`diffusion_for_medical_imaging.ipynb`](diffusion_for_medical_imaging.ipynb) | Diffusion Foundations for Medical Imaging: From DDPM forward noising to DDIM fast sampling, closed-form forward process, linear noise schedule, noise-prediction network training, and faster DDIM sampling. |
 
 ---
 

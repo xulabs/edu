@@ -57,7 +57,7 @@ Uses a circle of 16 pixels around a candidate pixel $p$. If a set of $N$ contigu
 
 | File | Description |
 |------|-------------|
-| `Corner_Detection_Tutorial.ipynb` | Derivation of the Structure Tensor, manual implementation of Harris corner detection from scratch, and comparison with OpenCV's built-in Harris, Shi-Tomasi, and FAST detectors on synthetic and real images. |
+| `corner_detection_tutorial.ipynb` | Derivation of the Structure Tensor, manual implementation of Harris corner detection from scratch, and comparison with OpenCV's built-in Harris, Shi-Tomasi, and FAST detectors on synthetic and real images. |
 | `feature_detectors_descriptors.ipynb` | Core concepts of local descriptors: raw patch matching, gradient computations, SIFT-like gradient histograms (magnitude & orientation), and descriptor matching under lighting changes. |
 
 ---

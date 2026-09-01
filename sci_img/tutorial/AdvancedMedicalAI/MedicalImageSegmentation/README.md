@@ -20,4 +20,4 @@ Image segmentation involves assigning a class label to every pixel in an image, 
 
 | File | Description |
 |------|-------------|
-| [`Simple segmentation.ipynb`](Simple%20segmentation.ipynb) | Hands-on tutorial on 2D image segmentation. Generates synthetic shape datasets, constructs a U-Net architecture using MONAI, trains the model with Dice loss, and evaluates performance. |
+| [`simple_segmentation.ipynb`](simple_segmentation.ipynb) | Hands-on tutorial on 2D image segmentation. Generates synthetic shape datasets, constructs a U-Net architecture using MONAI, trains the model with Dice loss, and evaluates performance. |

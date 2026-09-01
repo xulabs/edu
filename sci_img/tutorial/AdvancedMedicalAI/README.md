@@ -22,15 +22,15 @@ Case Study (Module 05 — clinical diagnostic assistant)
 
 | # | Subfolder | Core topic | Notebook | GPU needed? |
 |---|-----------|-----------|---------|-------------|
-| 1 | [`Volume3DSegmentation`](Volume3DSegmentation/) | 3-D U-Net spleen segmentation with MONAI on MSD | `3D_Medical_Image_Segmentation_MONAI.ipynb` | Yes |
+| 1 | [`Volume3DSegmentation`](Volume3DSegmentation/) | 3-D U-Net spleen segmentation with MONAI on MSD | `3d_medical_image_segmentation_monai.ipynb` | Yes |
 | 2 | [`MultimodalRegistration`](MultimodalRegistration/) | Classical (SimpleITK, ANTs) + deep (VoxelMorph-style) registration | `multimodal_image_registration.ipynb`<br>`biomedical_image_registration_and_deformation.ipynb` | Yes (deep section) |
-| 3 | [`MedicalGenerativeModel`](MedicalGenerativeModel/) | T1→T2 MRI synthesis via Schrödinger Bridge CFM & Diffusion Foundations | `SB_CFM_Medical_Synthesis.ipynb`<br>`Diffusion_for_Medical_Imaging.ipynb` | Yes |
+| 3 | [`MedicalGenerativeModel`](MedicalGenerativeModel/) | T1→T2 MRI synthesis via Schrödinger Bridge CFM & Diffusion Foundations | `sb_cfm_medical_synthesis.ipynb`<br>`diffusion_for_medical_imaging.ipynb` | Yes |
 | 4 | [`MedicalVisionLanguage`](MedicalVisionLanguage/) | BiomedCLIP, BLIP-2, LLaVA-1.5 on real medical images + Gradio demo | `multimodal_medical_imaging_tutorial.ipynb` | Yes |
-| 5 | [`ClinicalDiagnosticAssistant`](ClinicalDiagnosticAssistant/) | Simulated Transformer patch embedding and reasoning case study | `AI-Driven Clinical Diagnostic Assistant.ipynb` | No |
-| 6 | [`MultimodalDeepLearning`](MultimodalDeepLearning/) | Image + clinical/tabular early, late, and cross-attention fusion baselines | `Multimodal_Deep_Learning_Medical_Imaging_Tutorial.ipynb` | No |
+| 5 | [`ClinicalDiagnosticAssistant`](ClinicalDiagnosticAssistant/) | Simulated Transformer patch embedding and reasoning case study | `ai_driven_clinical_diagnostic_assistant.ipynb` | No |
+| 6 | [`MultimodalDeepLearning`](MultimodalDeepLearning/) | Image + clinical/tabular early, late, and cross-attention fusion baselines | `multimodal_deep_learning_medical_imaging_tutorial.ipynb` | No |
 | 7 | [`PromptableSegmentation`](PromptableSegmentation/) | Coordinate point/box prompt representation and MedSAM-guided lesion segmentation | `promptable_biomedical_lesion_segmentation.ipynb` | No |
 | 8 | [`MedicalImageClassification`](MedicalImageClassification/) | Grayscale 2D medical image classification with MONAI on MedNIST | `medical_image_classification_mednist.ipynb` | Yes (training) |
-| 9 | [`MedicalImageSegmentation`](MedicalImageSegmentation/) | Grayscale 2D medical image segmentation with MONAI U-Net on synthetic shapes | `Simple segmentation.ipynb` | No |
+| 9 | [`MedicalImageSegmentation`](MedicalImageSegmentation/) | Grayscale 2D medical image segmentation with MONAI U-Net on synthetic shapes | `simple_segmentation.ipynb` | No |
 | 10 | [`AcademicApproach`](AcademicApproach/) | Rigorous, reproducible evaluation, dataset splitting, and baseline habits | `academic_approach_medical_imaging_ml.ipynb` | No |
 
 ---

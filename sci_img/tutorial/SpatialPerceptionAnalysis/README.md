@@ -11,11 +11,11 @@ Phase 01 gave you the vocabulary: tensors, filters, features. Phase 02 is about 
 | # | Subfolder | Core topic | Notebooks | GPU needed? |
 |---|-----------|-----------|-----------|-------------|
 | 1 | [`DimensionReductionLatentSpace`](DimensionReductionLatentSpace/) | PCA, latent-space geometry, image reconstruction | `dimension_reduction_reconstruction.ipynb` | No |
-| 2 | [`ObjectDetectTracking`](ObjectDetectTracking/) | YOLOv5 detection, LAP-based 3-D cell tracking | `object_detection.ipynb`, `LAP_LapTrack.ipynb` | Yes (training) |
+| 2 | [`ObjectDetectTracking`](ObjectDetectTracking/) | YOLOv5 detection, LAP-based 3-D cell tracking | `object_detection.ipynb`, `lap_laptrack.ipynb` | Yes (training) |
 | 3 | [`ImageSegmentation`](ImageSegmentation/) | Thresholding, GMM, watershed, U-Net | `segmentation_geo_modified.ipynb`, `segmentation_deep.ipynb` | Yes (U-Net) |
-| 4 | [`ImageAlignmentRegister`](ImageAlignmentRegister/) | SimpleITK registration, Pix2Pix GAN translation | `Image_Registration.ipynb`, `image_translation.ipynb` | Yes (Pix2Pix) |
+| 4 | [`ImageAlignmentRegister`](ImageAlignmentRegister/) | SimpleITK registration, Pix2Pix GAN translation | `image_registration.ipynb`, `image_translation.ipynb` | Yes (Pix2Pix) |
 | 5 | [`StereoVision`](StereoVision/) | Stereo geometry, DLT triangulation, block matching (SAD/SSD/NCC), rectification | `stereo.ipynb` | No |
-| 6 | [`BioimageDenoising`](BioimageDenoising/) | Self-supervised denoising, Noise2Void, Noise2Self, classical baselines | `Self-Supervised Bioimage Denoising.ipynb` | Yes |
+| 6 | [`BioimageDenoising`](BioimageDenoising/) | Self-supervised denoising, Noise2Void, Noise2Self, classical baselines | `self_supervised_bioimage_denoising.ipynb` | Yes |
 
 All GPU-using notebooks fall back to CPU automatically — training will be slower but the pipeline still runs.
 

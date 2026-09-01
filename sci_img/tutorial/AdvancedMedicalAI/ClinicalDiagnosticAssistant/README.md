@@ -46,7 +46,7 @@ Matching the encoded sequence against a set of known clinical templates (e.g., P
 
 | File | Description |
 |------|-------------|
-| `AI-Driven Clinical Diagnostic Assistant.ipynb` | The complete four-part hands-on guide simulating the ARRG pipeline on a real chest X-ray fetched from an open-source repository. |
+| `ai_driven_clinical_diagnostic_assistant.ipynb` | The complete four-part hands-on guide simulating the ARRG pipeline on a real chest X-ray fetched from an open-source repository. |
 
 ---
 
