@@ -123,9 +123,10 @@ Then do the more applied notebooks:
 
 | Order | Tutorial                                        | What to learn                                 |
 | ----: | ----------------------------------------------- | --------------------------------------------- |
-|    18 | `ai_driven_clinical_diagnostic_assistant.ipynb` | Medical/clinical AI workflow                  |
-|    19 | `sb_cfm_medical_synthesis.ipynb`                | Medical image synthesis / generative modeling |
-|    20 | `academic_approach_medical_imaging_ml.ipynb`    | Rigorous dataset splitting, baseline comparisons, and avoiding data leakage |
+|    18 | `AI-Driven Clinical Diagnostic Assistant.ipynb` | Medical/clinical AI workflow                  |
+|    19 | `SB_CFM_Medical_Synthesis.ipynb`                | Medical image synthesis / generative modeling |
+|    20 | `diffusion models.ipynb`                        | Beginner diffusion models for medical imaging |
+|    21 | `academic_approach_medical_imaging_ml.ipynb`    | Rigorous dataset splitting, baseline comparisons, and avoiding data leakage |
 
 These notebooks are in the `sci_img/tutorial` folder. ([GitHub][3]) The repo’s tutorial guide also recommends clear educational/clinical disclaimers for medical tutorials, including that they are for research and education, not clinical diagnosis. ([GitHub][2])
 
@@ -147,12 +148,13 @@ Do the cryo-EM section after the image-processing and ML foundations:
 
 | Order | Tutorial                               | What to learn                                                      |
 | ----: | -------------------------------------- | ------------------------------------------------------------------ |
-|    21 | `cryoem_low_snr_tutorial.ipynb`        | Low-SNR cryo-EM data, CTF simulation, and 2-D class averaging      |
-|    22 | `lowdose_em_denoising_tutorial.ipynb`  | Self-supervised denoising (Noise2Void) on low-dose EM images       |
-|    23 | `cryoem_reconstruction_tutorial.ipynb` | 3-D Fourier Slice Theorem, back-projection, and EM pose estimation |
-|    24 | `build_and_diagnose_tomogram.md`       | Hands-on cryo-ET tilt-series alignment and tomogram reconstruction |
-|    25 | `subtomogram_averaging_tutorial.ipynb` | 3-D sub-tomogram averaging and particle picking for cryo-ET        |
-|    26 | `missing_wedge_wbp_sirt_tutorial.ipynb` | Weighted Backprojection vs SIRT reconstruction algorithms and missing wedge effects |
+|    22 | `cryoem_low_snr_tutorial.ipynb`        | Low-SNR cryo-EM data, CTF simulation, and 2-D class averaging      |
+|    23 | `lowdose_em_denoising_tutorial.ipynb`  | Self-supervised denoising (Noise2Void) on low-dose EM images       |
+|    24 | `cryoem_reconstruction_tutorial.ipynb` | 3-D Fourier Slice Theorem, back-projection, and EM pose estimation |
+|    25 | `build_and_diagnose_tomogram.md`       | Hands-on cryo-ET tilt-series alignment and tomogram reconstruction |
+|    26 | `subtomogram_averaging_tutorial.ipynb` | 3-D sub-tomogram averaging and particle picking for cryo-ET        |
+|    27 | `missing_wedge_wbp_sirt_tutorial.ipynb` | Weighted Backprojection vs SIRT reconstruction algorithms and missing wedge effects |
+|    28 | `motion_correction_tutorial.ipynb`     | Beam-induced whole-frame and patch-based motion correction on movie frames |
 
 The `cryoem/tutorial` folder contains these files. ([GitHub][4])
 
@@ -170,8 +172,8 @@ You should understand why cryo-EM data are difficult, why low signal-to-noise ra
 |    3 | Registration                    | `image_translation`, `image_registration`, `multimodal_image_registration`                       |
 |    4 | Segmentation/detection/tracking | `segmentation_geo_modified`, `segmentation_deep`, `object_detection`, `lap_laptrack`             |
 |    5 | ML for images                   | `introduction_to_pytorch`, `dimension_reduction_reconstruction`, `geometry_based_classification` |
-|    6 | Medical AI                      | `ai_driven_clinical_diagnostic_assistant`, `sb_cfm_medical_synthesis`, `academic_approach_medical_imaging_ml` |
-|    7 | Cryo-EM                         | `cryoem_low_snr_tutorial`, `lowdose_em_denoising_tutorial`, `cryoem_reconstruction_tutorial`, `build_and_diagnose_tomogram`, `subtomogram_averaging_tutorial`, `missing_wedge_wbp_sirt_tutorial` |
+|    6 | Medical AI                      | `AI-Driven Clinical Diagnostic Assistant`, `SB_CFM_Medical_Synthesis`, `diffusion models`, `academic_approach_medical_imaging_ml` |
+|    7 | Cryo-EM                         | `cryoem_low_snr_tutorial`, `lowdose_em_denoising_tutorial`, `cryoem_reconstruction_tutorial`, `build_and_diagnose_tomogram`, `subtomogram_averaging_tutorial`, `missing_wedge_wbp_sirt_tutorial`, `motion_correction_tutorial` |
 
 ---
 

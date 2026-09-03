@@ -55,7 +55,9 @@ Phase 04 — CryoEM & Structural Biology
   ├─ 05 Sub-tomogram Averaging & 3D Particle Picking (Cryo-ET)
   ├─ 06 Few-Shot CryoET Particle Detection
   ├─ 07 Tomogram Segmentation
-  └─ 08 Tomographic Reconstruction & Missing Wedge (WBP vs SIRT)
+  ├─ 08 Tomographic Reconstruction & Missing Wedge (WBP vs SIRT)
+  └─ 09 Beam-Induced Motion Correction (Patch-Based & Whole-Frame)
+
 
 Phase 05 — Robotic Lab Automation & VLA Models
   ├─ 01 AutoBio Simulator & Benchmark
@@ -102,7 +104,8 @@ The phase where individual building blocks converge into complete clinical-grade
 ### Phase 04 — CryoEM & Structural Biology
 **Level: Specialist** · Requires Phase 01 Module 02 (Fourier analysis) + NumPy/SciPy fluency.
 
-An end-to-end computational treatment of cryo-electron microscopy. Module 01 builds the 2-D signal-processing intuition (CTF simulation, denoising, particle picking, class averaging, FRC resolution). Module 02 extends everything to 3-D: the Fourier Slice Theorem, trilinear back-projection, and expectation-maximisation pose estimation. Module 03 covers fiducial-less patch-tracking tilt-series alignment. Module 04 is a full hands-on practical using IMOD/Etomo on a real published tilt series from EMPIAR. Module 05 covers 3-D sub-tomogram averaging (STA) and particle picking for cryo-ET. Module 06 covers few-shot 3D particle detection using weak labels and Volume Infill. Module 07 covers prompt-based interactive 3-D tomogram segmentation (SAM & CryoSAM propagation).
+An end-to-end computational treatment of cryo-electron microscopy. Module 01 builds the 2-D signal-processing intuition (CTF simulation, denoising, particle picking, class averaging, FRC resolution). Module 02 extends everything to 3-D: the Fourier Slice Theorem, trilinear back-projection, and expectation-maximisation pose estimation. Module 03 covers fiducial-less patch-tracking tilt-series alignment. Module 04 is a full hands-on practical using IMOD/Etomo on a real published tilt series from EMPIAR. Module 05 covers 3-D sub-tomogram averaging (STA) and particle picking for cryo-ET. Module 06 covers few-shot 3D particle detection using weak labels and Volume Infill. Module 07 covers prompt-based interactive 3-D tomogram segmentation (SAM & CryoSAM propagation). Module 08 covers tomographic reconstruction and missing-wedge effects (WBP vs SIRT). Module 09 covers beam-induced motion correction (patch-based and whole-frame drift tracking).
+
 
 ➜ [`cryoem/`](../../cryoem/readme.md)
 

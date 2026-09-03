@@ -18,8 +18,9 @@ CryoEM is computationally demanding because the experiment cannot provide clean 
 | [`FewShotParticleDetection`](tutorial/FewShotParticleDetection/) | SaSi-inspired few-shot CryoET particle detection, spherical weak label generation, Volume Infill augmentation, 3D CNN detection | `few_shot_cryoet_particle_detection_with_weak_labels_and_volume_infill.ipynb` |
 | [`TomogramSegmentation`](tutorial/TomogramSegmentation/) | Prompt-based interactive 3D tomogram segmentation, Segment Anything (SAM), CryoSAM cross-plane self-prompting propagation | `interactive_cryoet_tomogram_segmentation.ipynb`, `membrane_organelle_segmentation_tutorial.ipynb` |
 | [`MissingWedgeReconstruction`](tutorial/MissingWedgeReconstruction/) | Simulating full-range vs missing-wedge tilt series, Fourier slice effects, Weighted Backprojection (WBP) vs SIRT implementations | `missing_wedge_wbp_sirt_tutorial.ipynb` |
+| [`MotionCorrection`](tutorial/MotionCorrection/) | Beam-induced motion correction, whole-frame and patch-based/per-particle drift tracking on dose-fractionated movies | `motion_correction_tutorial.ipynb` |
 
-Modules 01, 02, 03, 05, 06, 07, and 08 are CPU/GPU Jupyter notebooks and run on Google Colab. Module 04 is a local software practical requiring IMOD/Etomo on Linux or macOS.
+Modules 01, 02, 03, 05, 06, 07, 08, and 09 are CPU/GPU Jupyter notebooks and run on Google Colab. Module 04 is a local software practical requiring IMOD/Etomo on Linux or macOS.
 
 ---
 
@@ -115,6 +116,16 @@ You will simulate full-range and missing-wedge tilt series from real 3D EM densi
 
 ---
 
+### Module 09 — Beam-Induced Motion Correction
+
+Electron beam irradiation causes physical doming and bubbling of the vitreous ice as well as mechanical drift of embedded macromolecules during exposure. Because data are recorded as dose-fractionated movies, uncorrected motion blurs high-resolution spatial details. This module explores beam-induced motion correction from first principles using real cryo-EM data (EMPIAR-10146 apoferritin).
+
+You will simulate realistic dose-fractionated movies from experimental micrographs, implement cross-correlation based whole-frame (rigid) drift tracking, extend alignment to localized patch-based (per-particle) grids to correct non-rigid deformations, and analyze the resulting resolution improvements and power spectra Thon rings.
+
+**Key skills:** Dose-fractionated movie processing, cross-correlation frame alignment, rigid whole-frame vs. non-rigid patch tracking, drift trajectory analysis, motion-corrected micrograph averaging, production pipelines (MotionCor2, RELION MotionCorr).
+
+---
+
 ## Learning Goals
 
 After finishing this phase you will be able to:
@@ -141,6 +152,7 @@ After finishing this phase you will be able to:
 - Extract quantitative properties (volume, centroid coordinates, bounding box) from a segmented 3D mask
 - Implement the tomographic rotate-and-sum forward model, and reconstruct tomograms using custom WBP and SIRT solvers
 - Quantify missing-wedge distortions in reconstructed volumes using structural similarity (SSIM) and line-profile analysis
+- Implement whole-frame rigid cross-correlation and patch-based per-particle motion correction on dose-fractionated cryo-EM movies
 
 ---
 
@@ -164,6 +176,7 @@ After finishing this phase you will be able to:
 | 06 — Few-Shot Particle Detection | CPU/GPU | Google Colab free tier (T4 GPU recommended) for 3D CNN training |
 | 07 — Tomogram Segmentation | CPU/GPU | Colab T4 GPU recommended for interactive SAM foundation model inference |
 | 08 — Missing-Wedge WBP/SIRT | CPU only | All NumPy/SciPy/scikit-image; Colab free tier is sufficient |
+| 09 — Motion Correction | CPU only | All NumPy/SciPy/matplotlib; Colab free tier is sufficient |
 
 ---
 
@@ -206,6 +219,8 @@ FewShotParticleDetection
 TomogramSegmentation
          ↓
 MissingWedgeReconstruction
+         ↓
+MotionCorrection
 ```
 
 The order is strict. Module 04 exposes you to real data and production software; every Etomo setting and every result it produces maps directly to a concept introduced computationally in Modules 01 and 02. Starting Module 04 without that background makes the software difficult to interpret and the diagnostic questions impossible to answer from principle.
