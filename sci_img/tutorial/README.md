@@ -31,19 +31,43 @@ Phase 02 — Spatial Perception & Analysis
   ├─ 01 Dimensionality Reduction & Latent Space (PCA)
   ├─ 02 Object Detection & Tracking (YOLOv5 + LAP)
   ├─ 03 Image Segmentation (Watershed → U-Net)
-  └─ 04 Image Alignment & Registration (SimpleITK + Pix2Pix)
+  ├─ 04 Image Alignment & Registration (SimpleITK + Pix2Pix)
+  ├─ 05 Stereo Vision & Depth Estimation
+  └─ 06 Self-Supervised Bioimage Denoising (Noise2Void / Noise2Self)
 
 Phase 03 — Advanced Medical AI
   ├─ 01 3-D Volumetric Segmentation with MONAI
   ├─ 02 Multimodal Image Registration
-  ├─ 03 Medical Generative Models (Schrödinger Bridge CFM)
+  ├─ 03 Medical Generative Models (Schrödinger Bridge CFM & Diffusion Foundations)
   ├─ 04 Medical Vision-Language Models (BiomedCLIP, BLIP-2, LLaVA)
-  └─ 05 Clinical Diagnostic Assistant Case Study
+  ├─ 05 Clinical Diagnostic Assistant Case Study
+  ├─ 06 Multimodal Deep Learning (Fusion & Contrastive Pretraining)
+  ├─ 07 Promptable Biomedical Lesion Segmentation (MedSAM-inspired)
+  ├─ 08 Medical Image Classification with MONAI (MedNIST)
+  ├─ 09 Medical Image Segmentation with MONAI & U-Net
+  └─ 10 Academic Approach to Machine Learning for Medical Imaging
 
 Phase 04 — CryoEM & Structural Biology
   ├─ 01 Low-SNR Noise Processing & Particle Picking
   ├─ 02 3-D CryoEM Reconstruction
-  └─ 03 Build & Diagnose a Real Cryo-ET Tomogram (EMPIAR-10164)
+  ├─ 03 Tilt-Series Alignment
+  ├─ 04 Build & Diagnose a Real Cryo-ET Tomogram (EMPIAR-10164)
+  ├─ 05 Sub-tomogram Averaging & 3D Particle Picking (Cryo-ET)
+  ├─ 06 Few-Shot CryoET Particle Detection
+  ├─ 07 Tomogram Segmentation
+  ├─ 08 Tomographic Reconstruction & Missing Wedge (WBP vs SIRT)
+  └─ 09 Beam-Induced Motion Correction (Patch-Based & Whole-Frame)
+
+
+Phase 05 — Robotic Lab Automation & VLA Models
+  ├─ 01 AutoBio Simulator & Benchmark
+  ├─ 02 AutoBio Computer Vision & Closed-Loop Control
+  ├─ 03 RLBench Simulator & Benchmark
+  ├─ 04 Diffusion Policy Visuomotor Training
+  ├─ 05 CALVIN Language-Conditioned Long-Horizon Manipulation
+  ├─ 06 CartPole DQN: Deep Q-Learning from Raw Pixels
+  ├─ 07 AI-Driven Quality Control for Opentrons OT-2
+  └─ 08 BEHAVIOR-1K Embodied AI Benchmark
 ```
 
 ---
@@ -71,7 +95,7 @@ Phase 02 is about understanding *where things are* and *what shape they have*. Y
 ### Phase 03 — Advanced Medical AI
 **Level: Advanced** · Requires Phases 01 and 02.
 
-The phase where individual building blocks converge into complete clinical-grade systems. You will train a 3-D U-Net on the Medical Segmentation Decathlon spleen benchmark, work through the full spectrum of multimodal registration from classical SimpleITK to deep VoxelMorph-style networks, synthesise missing imaging modalities using Schrödinger Bridge Conditional Flow Matching, and probe state-of-the-art foundation models (BiomedCLIP, BLIP-2, LLaVA-1.5) with real medical images.
+The phase where individual building blocks converge into complete clinical-grade systems. You will classify 2D medical images on MedNIST with MONAI, segment 2D medical shapes with U-Net, train a 3-D U-Net on the Medical Segmentation Decathlon spleen benchmark, work through the full spectrum of multimodal registration from classical SimpleITK to deep VoxelMorph-style networks, synthesise missing imaging modalities using Schrödinger Bridge Conditional Flow Matching, and probe state-of-the-art foundation models (BiomedCLIP, BLIP-2, LLaVA-1.5) with real medical images.
 
 ➜ [`AdvancedMedicalAI/`](AdvancedMedicalAI/)
 
@@ -80,7 +104,8 @@ The phase where individual building blocks converge into complete clinical-grade
 ### Phase 04 — CryoEM & Structural Biology
 **Level: Specialist** · Requires Phase 01 Module 02 (Fourier analysis) + NumPy/SciPy fluency.
 
-An end-to-end computational treatment of cryo-electron microscopy. Module 01 builds the 2-D signal-processing intuition (CTF simulation, denoising, particle picking, class averaging, FRC resolution). Module 02 extends everything to 3-D: the Fourier Slice Theorem, trilinear back-projection, and expectation-maximisation pose estimation. Module 03 is a full hands-on practical using IMOD/Etomo on a real published tilt series from EMPIAR.
+An end-to-end computational treatment of cryo-electron microscopy. Module 01 builds the 2-D signal-processing intuition (CTF simulation, denoising, particle picking, class averaging, FRC resolution). Module 02 extends everything to 3-D: the Fourier Slice Theorem, trilinear back-projection, and expectation-maximisation pose estimation. Module 03 covers fiducial-less patch-tracking tilt-series alignment. Module 04 is a full hands-on practical using IMOD/Etomo on a real published tilt series from EMPIAR. Module 05 covers 3-D sub-tomogram averaging (STA) and particle picking for cryo-ET. Module 06 covers few-shot 3D particle detection using weak labels and Volume Infill. Module 07 covers prompt-based interactive 3-D tomogram segmentation (SAM & CryoSAM propagation). Module 08 covers tomographic reconstruction and missing-wedge effects (WBP vs SIRT). Module 09 covers beam-induced motion correction (patch-based and whole-frame drift tracking).
+
 
 ➜ [`cryoem/`](../../cryoem/readme.md)
 
@@ -89,9 +114,9 @@ An end-to-end computational treatment of cryo-electron microscopy. Module 01 bui
 ### Phase 05 — Robotic Lab Automation & VLA Models
 **Level: Advanced / Specialist** · Requires Phase 01 and Phase 02.
 
-An end-to-end treatment of robotic lab automation. Module 01 covers the AutoBio simulation framework (Lan et al., 2025), physics plugins for detents and screw-caps, success metrics, and baseline VLA model evaluations. Module 02 builds computer vision tasks inspired by AutoBio (tube localization, slot symmetry indexing, liquid-level estimation, closed-loop dial panel control) using synthetic toy data.
+An end-to-end treatment of robotic lab automation. Module 01 covers the AutoBio simulation framework (Lan et al., 2025), physics plugins for detents and screw-caps, success metrics, and baseline VLA model evaluations. Module 02 builds computer vision tasks inspired by AutoBio (tube localization, slot symmetry indexing, liquid-level estimation, closed-loop dial panel control) using synthetic toy data. Module 03 introduces the RLBench simulator, its six core design principles, action/observation spaces, and waypoint-based motion planning. Module 04 covers the Diffusion Policy framework for visuomotor control, Module 05 teaches language-conditioned, long-horizon robot manipulation using the CALVIN benchmark, Module 06 covers DQN from raw pixels, Module 07 covers computer vision-based quality control for Opentrons OT-2, and Module 08 covers the BEHAVIOR-1K embodied AI benchmark.
 
-➜ [`RoboticLabAutomation/`](RoboticLabAutomation/)
+➜ [`RoboticLabAutomation/`](../../al/tutorial/)
 
 ---
 
@@ -162,18 +187,30 @@ tutorial/
 │   ├── ObjectDetectTracking/
 │   ├── ImageSegmentation/
 │   ├── ImageAlignmentRegister/
-│   └── StereoVision/
+│   ├── StereoVision/
+│   └── BioimageDenoising/
 ├── AdvancedMedicalAI/
 │   ├── README.md
 │   ├── Volume3DSegmentation/
 │   ├── MultimodalRegistration/
 │   ├── MedicalGenerativeModel/
 │   ├── MedicalVisionLanguage/
-│   └── ClinicalDiagnosticAssistant/
+│   ├── ClinicalDiagnosticAssistant/
+│   ├── MultimodalDeepLearning/
+│   ├── PromptableSegmentation/
+│   ├── MedicalImageClassification/
+│   ├── MedicalImageSegmentation/
+│   └── AcademicApproach/
 └── RoboticLabAutomation/
     ├── README.md
     ├── AutoBioBenchmark/
-    └── AutoBioComputerVision/
+    ├── AutoBioComputerVision/
+    ├── RLBench/
+    ├── DiffusionPolicy/
+    ├── CALVIN/
+    ├── CartPoleDQN/
+    ├── OpentronsOT2/
+    └── BEHAVIOR-1K/
 ```
 
 ---

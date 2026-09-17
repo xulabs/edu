@@ -61,7 +61,7 @@ where $a$ and $b$ are the fractional parts of $x$ and $y$.
 
 | File | Description |
 |------|-------------|
-| `2D_transformations.ipynb` | A concept-first guide illustrating synthetic image generation, linear transforms, homogeneous translations, affine/projective warps, inverse mapping implementation, and bilinear interpolation from scratch. |
+| `2d_transformations.ipynb` | A concept-first guide illustrating synthetic image generation, linear transforms, homogeneous translations, affine/projective warps, inverse mapping implementation, and bilinear interpolation from scratch. |
 | `image_homographies.ipynb` | A detailed self-learning chapter covering image homographies, coordinate transformations using homogeneous coordinates, image warping, Direct Linear Transform (DLT), normalized DLT, and robust estimation using RANSAC. |
 
 ---

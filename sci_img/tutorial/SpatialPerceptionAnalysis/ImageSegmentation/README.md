@@ -175,6 +175,7 @@ pixels — balanced enough that BCE alone is reasonable. For the spleen CT in Ph
 
 | File | Description |
 |------|-------------|
+| `biomedical_cell_nuclei_segmentation.ipynb` | Self-directed study notebook on 2D cell and nuclei segmentation. Utilizes a pretrained Cellpose model for inference, covers robust intensity normalization, Otsu thresholding baselines, Dice and IoU agreement metrics, and regionprops-based morphology feature extraction. |
 | `segmentation_geo_modified.ipynb` | Classical segmentation pipeline: Otsu thresholding with histogram analysis; adaptive thresholding; GMM fitting with component count selection; multi-channel region-growing; distance-transform-based marker computation; marker-controlled watershed; per-method IoU evaluation on ground-truth masks |
 | `segmentation_deep.ipynb` | Deep instance segmentation: yeast-cell dataset download and DataLoader construction; U-Net from SMP with ResNet34 encoder; BCE + Dice loss training loop; validation IoU tracking; learning curve visualisation; inference on held-out images with confidence maps; comparison against watershed baseline |
 

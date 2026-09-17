@@ -10,11 +10,21 @@ CryoEM is computationally demanding because the experiment cannot provide clean 
 
 | Subfolder | Topic | Files |
 |-----------|-------|-------|
-| [`LowSNRNoiseProcessing`](tutorial/LowSNRNoiseProcessing/) | SNR intuition, CTF simulation, classical denoising, particle picking, 2-D class averaging, FRC, Noise2Void | `cryoem_low_snr_tutorial.ipynb` |
+| [`LowSNRNoiseProcessing`](tutorial/LowSNRNoiseProcessing/) | SNR intuition, CTF simulation, classical denoising, particle picking, 2-D class averaging, FRC, Noise2Void | `cryoem_low_snr_tutorial.ipynb`, `lowdose_em_denoising_tutorial.ipynb`, `particle_picking_tutorial.ipynb` |
 | [`3DCryoEMReconstruction`](tutorial/3DCryoEMReconstruction/) | Forward model, CTF correction, Fourier Slice Theorem, trilinear back-projection, EM pose estimation, NeRF-style reconstruction | `cryoem_reconstruction_tutorial.ipynb` |
+| [`TiltSeriesAlignment`](tutorial/TiltSeriesAlignment/) | Fiducial-less patch-tracking tilt-series alignment, synthetic misalignment generation, projection/WBP reconstruction quality validation | `tilt_series_alignment_tutorial.ipynb` |
 | [`TomogramDiagnosisBuild`](tutorial/TomogramDiagnosisBuild/) | Hands-on cryo-ET workflow on EMPIAR-10164: tilt-series stacking, fiducial alignment, WBP and SIRT reconstruction, tomogram diagnosis | `build_and_diagnose_tomogram.md` |
+| [`SubtomogramAveraging`](tutorial/SubtomogramAveraging/) | Sub-tomogram averaging (STA) and 3D particle picking for Cryo-ET, missing wedge effects, 3-D template matching (NCC), orientation alignment, Fourier Shell Correlation (FSC), multi-reference classification | `subtomogram_averaging_tutorial.ipynb` |
+| [`FewShotParticleDetection`](tutorial/FewShotParticleDetection/) | SaSi-inspired few-shot CryoET particle detection, spherical weak label generation, Volume Infill augmentation, 3D CNN detection | `few_shot_cryoet_particle_detection_with_weak_labels_and_volume_infill.ipynb` |
+| [`TomogramSegmentation`](tutorial/TomogramSegmentation/) | Prompt-based interactive 3D tomogram segmentation, Segment Anything (SAM), CryoSAM cross-plane self-prompting propagation | `interactive_cryoet_tomogram_segmentation.ipynb`, `membrane_organelle_segmentation_tutorial.ipynb` |
+| [`MissingWedgeReconstruction`](tutorial/MissingWedgeReconstruction/) | Simulating full-range vs missing-wedge tilt series, Fourier slice effects, Weighted Backprojection (WBP) vs SIRT implementations | `missing_wedge_wbp_sirt_tutorial.ipynb` |
+| [`MotionCorrection`](tutorial/MotionCorrection/) | Beam-induced motion correction, whole-frame and patch-based/per-particle drift tracking on dose-fractionated movies | `motion_correction_tutorial.ipynb` |
+| [`LocalResolution`](tutorial/LocalResolution/) | Global FSC vs. sliding-window 3D local resolution estimation, ResMap/Blocres, ground-truth validation | `local_resolution_tutorial.ipynb` |
+| [`HeterogeneousReconstruction`](tutorial/HeterogeneousReconstruction/) | Continuous conformational heterogeneity, CryoDRGN coordinate network (implicit neural representation), VAE latent traversal | `CryoDRGN_tutorial.ipynb` |
 
-Modules 01 and 02 are CPU-only Jupyter notebooks and run on Google Colab. Module 03 is a local software practical requiring IMOD/Etomo on Linux or macOS.
+Modules 01, 02, 03, 05, 06, 07, 08, 09, 10, and 11 are CPU/GPU Jupyter notebooks and run on Google Colab. Module 04 is a local software practical requiring IMOD/Etomo on Linux or macOS.
+
+Modules 01, 02, 03, 05, 06, 07, 08, and 09 are CPU/GPU Jupyter notebooks and run on Google Colab. Module 04 is a local software practical requiring IMOD/Etomo on Linux or macOS.
 
 ---
 
@@ -46,7 +56,17 @@ The hardest real-world problem in cryoEM — that particle orientations are comp
 
 ---
 
-### Module 03 — Build & Diagnose a Real Cryo-ET Tomogram
+### Module 03 — Tilt-Series Alignment
+
+Reconstructing a 3D tomogram from 2D projections requires precise alignment of the images collected at different tilt angles. This module covers **Fiducial-Less Patch-Tracking Tilt-Series Alignment**, simulating the alignment process and implementing cross-correlation based patch tracking in Python.
+
+You will learn to simulate a tilt series with known translational misalignments from a real 3D EM volume, implement patch tracking with cumulative cross-correlation alignment correction, validate alignment accuracy against ground-truth translations, and reconstruct the final aligned 3D volume using Weighted Back Projection (WBP).
+
+**Key skills:** Tilt-series simulation, fiducial-less patch tracking, cumulative cross-correlation alignment, alignment validation, WBP reconstruction.
+
+---
+
+### Module 04 — Build & Diagnose a Real Cryo-ET Tomogram
 
 This is a hands-on practical rather than a Jupyter notebook. You will process a real cryo-ET tilt series of *Mycoplasma pneumoniae* from the EMPIAR-10164 public archive using IMOD/Etomo — the same software stack used by structural-biology labs worldwide. The three processing steps (stack → align → reconstruct) are carried out in full, and four guided diagnostic questions connect every result back to the computational theory in Modules 01 and 02.
 
@@ -62,6 +82,74 @@ Four diagnostic questions require written answers and 3dmod screenshots: alignme
 
 ---
 
+### Module 05 — Sub-tomogram Averaging & 3D Particle Picking
+
+Once a 3-D tomogram is reconstructed (using WBP or SIRT as in Module 04), the next task is to identify and extract the individual macromolecular structures contained within it to obtain high-resolution models. This module introduces the concepts and computational pipeline of **Sub-tomogram Averaging (STA)**. 
+
+You will explore the geometry and impact of the missing wedge in 3-D Fourier space, simulate a realistic multi-particle tomogram, and implement 3-D template matching using normalized cross-correlation (NCC) to pick particles. You will align and average these sub-volumes to cancel noise and combat the missing wedge, resolve conformational heterogeneity using multi-reference classification, and measure the resolution using the 3-D **Fourier Shell Correlation (FSC)**.
+
+**Key skills:** Missing wedge geometry in 3-D Fourier space, 3-D template matching, sub-volume extraction and coordinate tracking, 3-D rotation alignment, Fourier Shell Correlation (FSC) calculation, multi-reference K-means classification in 3-D.
+
+---
+
+### Module 06 — Few-Shot CryoET Particle Detection
+
+Automatic particle picking in cryo-electron tomography (cryo-ET) is heavily bottlenecked by the scarcity of annotated data and low signal-to-noise ratios. This module introduces a deep learning pipeline for **Few-Shot Cryo-ET Particle Detection** using weak labels and Volume Infill, inspired by the SaSi framework (Adethya et al., 2025).
+
+You will generate spherical weak labels around sparse user-annotated particle centers, learn the concept of self-augmented **Volume Infill** (extracting particle subvolumes and pasting them into background locations to augment training samples), build and train a lightweight 3D convolutional network for voxel-wise particle detection, and extract 3D coordinates from predicted probability volumes.
+
+**Key skills:** Spherical weak label generation, Volume Infill data augmentation, 3D CNN detection network design, post-processing coordinates extraction, coordinate-based metric evaluation (Precision, Recall, F1, localization error).
+
+---
+
+### Module 07 — Interactive Tomogram Segmentation
+
+This module implements a human-in-the-loop 3D segmentation pipeline for Cryo-ET tomograms based on prompt propagation, drawing on the concepts from the Segment Anything Model (SAM) and CryoSAM. Slicing through noisy experimental 3D volumes is tedious, and fully automated networks often struggle with local artifacts and crowded environments. You will explore how a single 2D user-placed prompt (a point inside a ribosome or membrane) can generate a local mask that propagates slice by slice to reconstruct a full 3D object. You will design propagation stopping criteria based on bounding box shifts and area overlap, inspect the reconstructed 3D mask from XY/XZ/YZ planes, and interactively correct segmentation errors on the fly.
+
+**Key skills:** 3D tomogram slice manipulation, promptable 2D segmentation, automated prompt generation from masks, bidirectional slice propagation, propagation stopping criteria (centroid shift, area thresholds), interactive human-in-the-loop mask correction, 3D volume/centroid measurements.
+
+---
+
+### Module 08 — The Missing-Wedge Artifact: WBP vs. SIRT
+
+Tomographic reconstruction in cryo-ET is physically constrained by the angular range of the specimen holder, resulting in a "missing wedge" of data in Fourier space. This module explores how the missing wedge affects 3D tomogram quality and benchmarks two classical reconstruction methods: Weighted Backprojection (WBP) and the iterative Simultaneous Reconstruction Technique (SIRT).
+
+You will simulate full-range and missing-wedge tilt series from real 3D EM density, visualize the missing-wedge effect in 3D Fourier space, implement both the WBP radial filter and the SIRT iterative update equations from scratch, and quantitatively compare the reconstructions using structural similarity (SSIM) and line-profile analysis.
+
+**Key skills:** Tomographic rotate-and-sum forward model, 3-D Fourier space missing wedge representation, WBP radial filter design, SIRT projection/backprojection iterative loop, SSIM and intensity profile evaluation.
+
+---
+
+### Module 09 — Beam-Induced Motion Correction
+
+Electron beam irradiation causes physical doming and bubbling of the vitreous ice as well as mechanical drift of embedded macromolecules during exposure. Because data are recorded as dose-fractionated movies, uncorrected motion blurs high-resolution spatial details. This module explores beam-induced motion correction from first principles using real cryo-EM data (EMPIAR-10146 apoferritin).
+
+You will simulate realistic dose-fractionated movies from experimental micrographs, implement cross-correlation based whole-frame (rigid) drift tracking, extend alignment to localized patch-based (per-particle) grids to correct non-rigid deformations, and analyze the resulting resolution improvements and power spectra Thon rings.
+
+**Key skills:** Dose-fractionated movie processing, cross-correlation frame alignment, rigid whole-frame vs. non-rigid patch tracking, drift trajectory analysis, motion-corrected micrograph averaging, production pipelines (MotionCor2, RELION MotionCorr).
+
+---
+
+### Module 10 — Local Resolution Estimation in Cryo-EM 3D Maps
+
+A single global FSC resolution number is an average over the entire map. Real macromolecules are rarely uniformly ordered: rigid cores reconstruct sharply, while flexible loops, peripheral domains, or ligand-binding pockets are smeared out and have lower local resolution. Local resolution estimation recovers this spatial variation directly.
+
+This module builds two independent half-maps from real 3D EM density corrupted by a physically motivated, spatially varying blur field and noise realizations. You will calculate the global Gold-Standard FSC at the standard 0.143 threshold, implement sliding-window local FSC across the 3D volume (the foundational design of ResMap and Blocres), and quantitatively validate the recovered local resolution map against the ground-truth blur pattern.
+
+**Key skills:** Gold-standard FSC calculation (0.143 threshold), sliding-window 3D subvolume extraction and spherical masking, local Fourier Shell Correlation, per-voxel local resolution mapping, resolution map validation against ground-truth blur fields, production software tools (ResMap, Blocres, MonoRes, cryoSPARC).
+
+---
+
+### Module 11 — Heterogeneous Structure Reconstruction with Neural Networks (CryoDRGN)
+
+Classical single-particle reconstruction assumes a homogeneous, rigid macromolecule and averages all aligned particle projections into a single consensus 3D density. If the dataset contains continuous conformational motion (e.g. flexible domain hinge movements or breathing states), naive averaging smears these regions into blurred streaks.
+
+This module implements the CryoDRGN framework (Zhong et al., *Nature Methods* 2021) from first principles. You will implement the forward imaging model using Hartley-space central slice sampling and CTF modulation, construct a Variational Autoencoder (VAE) where the encoder maps particle images to continuous latent codes and the decoder is a coordinate-based Multi-Layer Perceptron (implicit neural representation), train the model end-to-end with an ELBO objective, and decode full 3D volumes along the learned latent manifold to retrace continuous conformational transitions.
+
+**Key skills:** Projection-slice theorem in Hartley space, central-slice frequency coordinate sampling, differentiable CTF modulation, coordinate-based MLP (implicit neural representation) architecture, VAE latent space representation of continuous conformational heterogeneity, latent manifold traversal, volume decoding at arbitrary coordinates.
+
+---
+
 ## Learning Goals
 
 After finishing this phase you will be able to:
@@ -74,6 +162,26 @@ After finishing this phase you will be able to:
 - Understand how the EM algorithm jointly estimates particle orientations and the 3-D reconstruction, and implement a simplified version from scratch
 - Use IMOD/Etomo to align a real cryo-ET tilt series with gold fiducials and reconstruct both WBP and SIRT tomograms
 - Identify the missing-wedge artefact in a real tomogram and explain its origin in Fourier space
+- Simulate a tilt series with known translation offsets from a real 3D EM volume
+- Implement patch-tracking alignment using cumulative cross-correlation to estimate drift correction
+- Generate spherical weak labels from sparse 3D particle-center coordinates
+- Apply Volume Infill augmentation to address label scarcity and class imbalance in cryo-ET tomograms
+- Explain the sub-tomogram averaging pipeline and why Z-axis alignment requires handling the missing wedge in 3-D Fourier space
+- Implement 3-D template matching (NCC) and compute the 3-D Fourier Shell Correlation (FSC) for resolution estimation
+- Describe how multi-reference classification resolves conformational heterogeneity in 3-D particle datasets
+- Segment a 3D tomogram from a single user-placed point prompt on a seed slice
+- Implement bidirectional slice propagation of 2D masks across adjacent tomogram slices
+- Define and configure propagation stopping criteria using centroid shift and area overlap thresholds
+- Perform manual interactive prompt correction on poorly-segmented slices to refine the final 3D reconstruction
+- Extract quantitative properties (volume, centroid coordinates, bounding box) from a segmented 3D mask
+- Implement the tomographic rotate-and-sum forward model, and reconstruct tomograms using custom WBP and SIRT solvers
+- Quantify missing-wedge distortions in reconstructed volumes using structural similarity (SSIM) and line-profile analysis
+- Implement whole-frame rigid cross-correlation and patch-based per-particle motion correction on dose-fractionated cryo-EM movies
+- Compute global Fourier Shell Correlation (FSC) and implement sliding-window local FSC to map spatially varying resolution across 3D macromolecular density
+- Quantify the spatial resolution gradient between rigid macromolecular cores and flexible peripheral loops
+- Formulate the cryo-EM forward imaging model in Hartley space and implement central-slice frequency sampling
+- Train a coordinate-based VAE (CryoDRGN) to discover continuous conformational heterogeneity without discrete classification
+- Decode 3D electron density volumes across continuous latent coordinates to visualize conformational transitions
 
 ---
 
@@ -91,16 +199,24 @@ After finishing this phase you will be able to:
 |--------|---------|-------|
 | 01 — Low-SNR Processing | CPU only | All NumPy/SciPy; Colab free tier is sufficient |
 | 02 — 3-D Reconstruction | CPU (most sections), GPU optional | The NeRF section benefits from GPU but falls back to CPU |
-| 03 — Tomogram Practical | Local machine with IMOD | Colab-incompatible; Linux or macOS required (WSL2 on Windows) |
+| 03 — Tilt-Series Alignment | CPU only | All NumPy/SciPy; Colab free tier is sufficient |
+| 04 — Tomogram Practical | Local machine with IMOD | Colab-incompatible; Linux or macOS required (WSL2 on Windows) |
+| 05 — Sub-tomogram Averaging | CPU only | All NumPy/SciPy/scikit-image; Colab free tier is sufficient |
+| 06 — Few-Shot Particle Detection | CPU/GPU | Google Colab free tier (T4 GPU recommended) for 3D CNN training |
+| 07 — Tomogram Segmentation | CPU/GPU | Colab T4 GPU recommended for interactive SAM foundation model inference |
+| 08 — Missing-Wedge WBP/SIRT | CPU only | All NumPy/SciPy/scikit-image; Colab free tier is sufficient |
+| 09 — Motion Correction | CPU only | All NumPy/SciPy/matplotlib; Colab free tier is sufficient |
+| 10 — Local Resolution | CPU only | All NumPy/SciPy/matplotlib; Colab free tier is sufficient |
+| 11 — Heterogeneous Reconstruction (CryoDRGN) | CPU/GPU | Google Colab free tier (T4 GPU recommended for VAE training, CPU supported) |
 
 ---
 
 ## Setup
 
 ```bash
-# Modules 01 and 02 — Python dependencies
+# Modules 01, 02, and 05 — Python dependencies
 # Each notebook also installs its own requirements in the first cell
-pip install numpy scipy matplotlib scikit-image torch tqdm
+pip install numpy scipy matplotlib scikit-image torch torchvision tqdm
 
 # Module 03 — IMOD (Linux, Ubuntu 20.04+)
 # Download the installer from https://bio3d.colorado.edu/imod/download.html
@@ -123,10 +239,26 @@ LowSNRNoiseProcessing
          ↓
 3DCryoEMReconstruction
          ↓
+TiltSeriesAlignment
+         ↓
 TomogramDiagnosisBuild
+         ↓
+SubtomogramAveraging
+         ↓
+FewShotParticleDetection
+         ↓
+TomogramSegmentation
+         ↓
+MissingWedgeReconstruction
+         ↓
+MotionCorrection
+         ↓
+LocalResolution
+         ↓
+HeterogeneousReconstruction
 ```
 
-The order is strict. Module 03 exposes you to real data and production software; every Etomo setting and every result it produces maps directly to a concept introduced computationally in Modules 01 and 02. Starting Module 03 without that background makes the software difficult to interpret and the diagnostic questions impossible to answer from principle.
+The order is strict. Module 04 exposes you to real data and production software; every Etomo setting and every result it produces maps directly to a concept introduced computationally in Modules 01 and 02. Starting Module 04 without that background makes the software difficult to interpret and the diagnostic questions impossible to answer from principle.
 
 ---
 

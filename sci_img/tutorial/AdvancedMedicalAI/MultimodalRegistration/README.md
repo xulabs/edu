@@ -142,7 +142,8 @@ Jacobian determinant > 0 at every voxel.
 
 | File | Description |
 |------|-------------|
-| `multimodal_image_registration.ipynb` | Synthetic brain phantom generation (T1 + T2 contrast, known ground-truth misalignment); metric comparison (MSE vs NCC vs MI); classical rigid + affine + B-spline registration with SimpleITK; SyN deformable registration with ANTs; deep-learning registration with a PyTorch U-Net + spatial transformer; Jacobian determinant analysis; comprehensive evaluation dashboard |
+| [`multimodal_image_registration.ipynb`](multimodal_image_registration.ipynb) | Synthetic brain phantom generation (T1 + T2 contrast, known ground-truth misalignment); metric comparison (MSE vs NCC vs MI); classical rigid + affine + B-spline registration with SimpleITK; SyN deformable registration with ANTs; deep-learning registration with a PyTorch U-Net + spatial transformer; Jacobian determinant analysis; comprehensive evaluation dashboard |
+| [`biomedical_image_registration_and_deformation.ipynb`](biomedical_image_registration_and_deformation.ipynb) | From intensity alignment to lightweight VoxelMorph-style deformation reasoning: similarity metrics, brute-force translation baseline, tiny learned deformation-field model, lightweight training loop on synthetic data, and error visualization. |
 
 ---
 

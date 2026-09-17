@@ -22,11 +22,17 @@ Case Study (Module 05 — clinical diagnostic assistant)
 
 | # | Subfolder | Core topic | Notebook | GPU needed? |
 |---|-----------|-----------|---------|-------------|
-| 1 | [`Volume3DSegmentation`](Volume3DSegmentation/) | 3-D U-Net spleen segmentation with MONAI on MSD | `3D_Medical_Image_Segmentation_MONAI.ipynb` | Yes |
-| 2 | [`MultimodalRegistration`](MultimodalRegistration/) | Classical (SimpleITK, ANTs) + deep (VoxelMorph-style) registration | `multimodal_image_registration.ipynb` | Yes (deep section) |
-| 3 | [`MedicalGenerativeModel`](MedicalGenerativeModel/) | T1→T2 MRI synthesis via Schrödinger Bridge CFM | `SB_CFM_Medical_Synthesis.ipynb` | Yes |
+| 1 | [`Volume3DSegmentation`](Volume3DSegmentation/) | 3-D U-Net spleen segmentation with MONAI on MSD | `3d_medical_image_segmentation_monai.ipynb` | Yes |
+| 2 | [`MultimodalRegistration`](MultimodalRegistration/) | Classical (SimpleITK, ANTs) + deep (VoxelMorph-style) registration | `multimodal_image_registration.ipynb`<br>`biomedical_image_registration_and_deformation.ipynb` | Yes (deep section) |
+| 3 | [`MedicalGenerativeModel`](MedicalGenerativeModel/) | T1→T2 MRI synthesis via Schrödinger Bridge CFM & Diffusion Foundations | `SB_CFM_Medical_Synthesis.ipynb`<br>`Diffusion_for_Medical_Imaging.ipynb`<br>`diffusion models.ipynb` | Yes |
+
 | 4 | [`MedicalVisionLanguage`](MedicalVisionLanguage/) | BiomedCLIP, BLIP-2, LLaVA-1.5 on real medical images + Gradio demo | `multimodal_medical_imaging_tutorial.ipynb` | Yes |
-| 5 | [`ClinicalDiagnosticAssistant`](ClinicalDiagnosticAssistant/) | Simulated Transformer patch embedding and reasoning case study | `AI-Driven Clinical Diagnostic Assistant.ipynb` | No |
+| 5 | [`ClinicalDiagnosticAssistant`](ClinicalDiagnosticAssistant/) | Simulated Transformer patch embedding and reasoning case study | `ai_driven_clinical_diagnostic_assistant.ipynb` | No |
+| 6 | [`MultimodalDeepLearning`](MultimodalDeepLearning/) | Image + clinical/tabular early, late, and cross-attention fusion baselines | `multimodal_deep_learning_medical_imaging_tutorial.ipynb` | No |
+| 7 | [`PromptableSegmentation`](PromptableSegmentation/) | Coordinate point/box prompt representation and MedSAM-guided lesion segmentation | `promptable_biomedical_lesion_segmentation.ipynb` | No |
+| 8 | [`MedicalImageClassification`](MedicalImageClassification/) | Grayscale 2D medical image classification with MONAI on MedNIST | `medical_image_classification_mednist.ipynb` | Yes (training) |
+| 9 | [`MedicalImageSegmentation`](MedicalImageSegmentation/) | Grayscale 2D medical image segmentation with MONAI U-Net on synthetic shapes | `Simple segmentation.ipynb` | No |
+| 10 | [`AcademicApproach`](AcademicApproach/) | Rigorous, reproducible evaluation, dataset splitting, and baseline habits | `academic_approach_medical_imaging_ml.ipynb` | No |
 
 ---
 
@@ -116,6 +122,48 @@ This module is a comprehensive case study bridging traditional computer vision a
 
 ---
 
+### Module 06 — Multimodal Deep Learning (Fusion & Contrastive Pretraining)
+
+This module covers the architectures and fusion strategies used when combining visual data with tabular or clinical features (e.g. lab values, vitals, patient demographics). You will implement three core fusion strategies: early fusion (concatenation at input), late fusion (fusion of logits or features near output), and cross-attention fusion (intermediate transformer-style attention query). Additionally, you will build a toy implementation of CLIP-style contrastive pretraining to align image and clinical text embeddings and test the robustness of the fusion architectures when certain modalities are noisy or missing.
+
+**Key skills:** Early/late/cross-attention fusion architectures, multi-head attention, contrastive loss, unimodal vs. multimodal baselines, noise robustness.
+
+---
+
+### Module 07 — Promptable Biomedical Lesion Segmentation (MedSAM-inspired)
+
+This module introduces promptable foundation models for medical image segmentation (like SAM and MedSAM). Unlike traditional automatic segmentation (e.g., U-Net), promptable models accept user prompts (such as bounding boxes or point coordinates) to select and segment a specific lesion. You will learn to represent points as Gaussian peak channels and boxes as binary channels, build a lightweight prompt-conditioned segmentation network, and train it on synthetic lesion images. You will also perform ablation studies and stress-test the model against noisy or imperfect prompts.
+
+**Key skills:** Prompt-guided segmentation, bounding box & point prompt channel encoding, MedSAM-inspired architecture, Dice/IoU/sensitivity/specificity metrics, stress-testing.
+
+---
+
+### Module 08 — Medical Image Classification
+
+This module serves as a 2D beginner-friendly introduction to medical image classification using deep learning. You will use MONAI and PyTorch to classify 2D grayscale medical images (X-rays, CT scans, MRIs, hands) using the MedNIST dataset and a DenseNet121 convolutional neural network.
+
+**Key skills:** `MedNISTDataset`, custom transforms (`Compose`, `LoadImage`, `ScaleIntensity`, `Resize`, `RandRotate90`, `RandFlip`), DenseNet121, accuracy/F1-score classification report, ROC curves, confusion matrix.
+
+---
+
+### Module 09 — Medical Image Segmentation
+
+This module serves as a 2D beginner-friendly introduction to medical image segmentation. You will use MONAI and PyTorch to segment synthetic images containing simple shapes using a standard U-Net architecture. The module builds directly on image classification concepts but introduces pixel-level ground truth (masks), the U-Net architecture, Dice Loss, and the Dice score metric.
+
+**Key skills:** Synthetic image generation (`create_test_image_2d`), U-Net architecture, pixel-level classification (masks), Dice Loss, Dice score evaluation.
+
+---
+
+### Module 10 — Academic Approach to Machine Learning for Medical Imaging
+
+Building a machine learning model that works is different from building one that is academically rigorous, reproducible, and defensible as research. This notebook covers the habits and checks that separate a "working demo" from academically rigorous work — using examples from our own prior classification and segmentation notebooks where relevant.
+
+You will learn to formulate falsifiable research questions, prevent data leakage by splitting datasets at the patient level rather than scan level, implement baseline models for robust comparison, evaluate performance using multi-metric classification reports, and adopt practices for full experiment reproducibility.
+
+**Key skills:** Patient-level split logic (`GroupShuffleSplit`), data leakage detection, baseline comparisons, classification reports, reproducibility protocols.
+
+---
+
 ## Learning Goals
 
 After completing Phase 03 you will be able to:
@@ -125,6 +173,12 @@ After completing Phase 03 you will be able to:
 - Apply rigid, affine, and deformable registration using SimpleITK and ANTs, and compare to a trained deep-learning registration network on the same dataset
 - Derive the Conditional Flow Matching objective, understand what the Schrödinger Bridge modification adds in terms of trajectory efficiency, and train a synthesis model on paired 2-D MRI slices
 - Run BiomedCLIP zero-shot classification, BLIP-2 captioning, and LLaVA VQA on medical images; evaluate generated text quantitatively; and manage multiple large models within a 16 GB VRAM budget
+- Explain early, late, and cross-attention fusion strategies for multi-modal medical datasets
+- Implement and train a promptable, MedSAM-inspired 2-D lesion segmentation model conditioned on box and point prompts
+- Build a medical image classification model using MONAI and evaluate performance with ROC curves and confusion matrices
+- Build and train a 2D U-Net segmentation model using MONAI on synthetic shape images
+- Explain and implement Dice Loss and Dice similarity coefficient for segmentation evaluation
+- Formulate falsifiable research questions and prevent patient-level data leakage when training medical imaging models
 
 ---
 
@@ -146,6 +200,12 @@ All notebooks target **Google Colab with a T4 GPU (16 GB VRAM)**.
 | 02 — Registration | ~4 GB | Deep-learning section only; classical sections are CPU |
 | 03 — Generative Model | ~6 GB | 2-D slices keep memory manageable |
 | 04 — Vision-Language | ~14 GB peak | **Load and unload one model at a time** — see teardown pattern below |
+| 05 — Clinical Assistant | CPU | Runs fully on CPU |
+| 06 — Multimodal Fusion | CPU / GPU | Fast, runnable on CPU or Google Colab free tier |
+| 07 — Promptable Seg | CPU / GPU | Fast, runnable on CPU or Google Colab free tier |
+| 08 — Classification | ~4 GB | Fast, training is runnable on GPU in Colab free tier |
+| 09 — Medical Seg | CPU | Fast, training is runnable on CPU or Google Colab free tier |
+| 10 — Academic Approach | CPU | Runs fully on CPU |
 
 **Module 04 teardown pattern (mandatory):**
 
@@ -174,29 +234,40 @@ pip install "monai[nibabel,tqdm]" SimpleITK antspyx torchcfm nibabel \
 ## Suggested Order
 
 ```
+MedicalImageClassification
+         ↓
+MedicalImageSegmentation
+         ↓
 Volume3DSegmentation
          ↓
 MultimodalRegistration
          ↓
 MedicalGenerativeModel    ←→    MedicalVisionLanguage
-                                           ↓
-                               ClinicalDiagnosticAssistant
+         ↓                              ↓
+MultimodalDeepLearning    ←→    PromptableSegmentation
+                                         ↓
+                                 ClinicalDiagnosticAssistant
+                                              ↓
+                                       AcademicApproach
 ```
 
-Modules 03 and 04 are largely independent of each other. Once you have finished 01 and 02, they can be taken in either order. Module 05 acts as a final case study bridging the gap between traditional processing and vision-language concepts.
+Module 08 serves as a 2D beginner-friendly introduction to MONAI and PyTorch training loops, setting the stage. Module 09 introduces 2D image segmentation on synthetic datasets as a transition before moving to the more complex 3D segmentation task in Module 01. Modules 03 and 04 are largely independent of each other. Once you have finished 01 and 02, they can be taken in either order. Similarly, Modules 06 and 07 cover multi-modal fusion and promptable foundation concepts, which prepare you for the sequence representation logic in Module 05. Finally, Module 10 covers the academic habits and methodology rules for training and validating medical imaging models.
 
 ---
 
 ## How the Modules Connect in Practice
 
-The four modules address the same clinical challenge from different angles:
+The modules address the same clinical challenge from different angles:
 
 1. A 3-D scan arrives → **Module 01** delineates the structure of interest automatically
 2. Serial scans from different sessions arrive → **Module 02** aligns them into a common space
 3. A scan in the needed modality is missing → **Module 03** synthesises it from an available modality, enabling monomodal registration with MSE (simpler and faster than multimodal MI)
 4. A clinician wants to query the processed data in natural language → **Module 04** answers zero-shot, without task-specific fine-tuning
+5. Interactive or targeted segmentation is required → **Module 07** handles promptable, human-in-the-loop segmentation
+6. Multiple diagnostic modalities (imaging + lab values) need to be combined → **Module 06** fuses them into unified representations
+7. A clinician wants a complete assistant to explain predictions and generate reports → **Module 05** acts as the clinical reasoning sequence case study
 
-Together they cover the three core paradigms of modern medical vision AI: discriminative models (segmentation), transformation models (registration + synthesis), and generative + language models (VLMs).
+Together they cover the paradigms of modern medical vision AI: discriminative, transformation, promptable, generative, multimodal fusion, and sequence reasoning.
 
 ---
 
@@ -209,3 +280,5 @@ Together they cover the three core paradigms of modern medical vision AI: discri
 - BiomedCLIP (Zhang et al., 2023): https://arxiv.org/abs/2303.00915
 - BLIP-2 (Li et al., 2023): https://arxiv.org/abs/2301.12597
 - LLaVA-1.5 (Liu et al., 2023): https://arxiv.org/abs/2310.03744
+- MedSAM (Ma et al., 2024): https://arxiv.org/abs/2304.12306
+- Multimodal Fusion (Liang et al., 2022): https://arxiv.org/abs/2209.03430

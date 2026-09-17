@@ -169,6 +169,9 @@ Production cryoEM tools built on this principle: `cryoCARE` (pair-based), `Topaz
 |------|-------------|
 | `cryoem_low_snr_tutorial.ipynb` | SNR vs averaging demo; CTF simulation (phantom → CTF → noise); denoising comparison (Gaussian, Median, Wiener, Bandpass); CTF phase-flip and Wiener correction; template-matching particle picking; K-means + NCC 2-D class averaging; FRC resolution curve; Noise2Void concept; full PSNR/SSIM benchmark |
 | `self_supervised_denoising_medical.ipynb` | Hands-on tutorial on self-supervised denoising (Noise2Self J-invariant masking, Noise2Void structured masking, Probabilistic Noise2Void for uncertainty estimation), noise models in medical imaging, and FRC evaluation. |
+| `lowdose_em_denoising_tutorial.ipynb` | Self-supervised blind-spot denoising (Noise2Void family) trained directly on low-dose noisy EM images using ISBI 2012 EM Segmentation Challenge data. Covers Poisson-Gaussian noise modeling, masked training, and PSNR/SSIM evaluation. |
+| `particle_picking_tutorial.ipynb` | Weakly-supervised / positive-unlabeled learning for particle picking in cryo-EM micrographs (apoferritin EMPIAR-10146 dataset). Implements classical template/blob picking, a custom Patch-CNN classifier trained on bootstrap labels, and sliding-window peak detection. |
+
 
 ---
 

@@ -114,7 +114,7 @@ uses a `GradScaler` to prevent fp16 gradient underflow during backprop. In pract
 
 | File | Description |
 |------|-------------|
-| `3D_Medical_Image_Segmentation_MONAI.ipynb` | Complete pipeline: environment setup, MSD dataset download and preprocessing, CacheDataset construction, 3-D U-Net definition, DiceCELoss + AdamW + cosine LR, AMP training loop, validation with sliding-window inference, DSC/HD95 evaluation, and multi-planar result visualisation |
+| `3d_medical_image_segmentation_monai.ipynb` | Complete pipeline: environment setup, MSD dataset download and preprocessing, CacheDataset construction, 3-D U-Net definition, DiceCELoss + AdamW + cosine LR, AMP training loop, validation with sliding-window inference, DSC/HD95 evaluation, and multi-planar result visualisation |
 
 ---
 

@@ -19,11 +19,11 @@ Phase 01 builds those first two layers by hand.
 | # | Subfolder | Core topic | Notebooks | GPU needed? |
 |---|-----------|-----------|-----------|-------------|
 | 1 | [`PyTorchTensorBasic`](PyTorchTensorBasic/) | Tensors, DICOM, TIFF, volumetric I/O | `introduction_to_pytorch.ipynb`, `basic_operations.ipynb` | No |
-| 2 | [`FrequencyFiltering`](FrequencyFiltering/) | Convolution, Fourier transforms, image pyramids | `image_filtering.ipynb`, `image_filtering_notebook.ipynb`, `Image_Pyramids_and_Frequency_Domain.ipynb` | No |
+| 2 | [`FrequencyFiltering`](FrequencyFiltering/) | Convolution, Fourier transforms, image pyramids | `image_filtering.ipynb`, `image_filtering_notebook.ipynb`, `image_pyramids_and_frequency_domain.ipynb` | No |
 | 3 | [`ClassicalFeatureExtract`](ClassicalFeatureExtract/) | Edge detection (Canny, Sobel), Hough Transform | `conv_edge_detection.ipynb`, `line_curve_detection.ipynb` | No |
 | 4 | [`GeometryBasedClassification`](GeometryBasedClassification/) | GLCM texture, morphological features, SVM/k-NN | `geometry_based_classification.ipynb` | No |
-| 5 | [`CornerDetection`](CornerDetection/) | Harris, Shi-Tomasi, and FAST detectors; feature descriptors and matching | `Corner_Detection_Tutorial.ipynb`, `feature_detectors_descriptors.ipynb` | No |
-| 6 | [`SpatialTransformations`](SpatialTransformations/) | Coordinate systems, 2D linear/affine/projective transforms, warping | `2D_transformations.ipynb` | No |
+| 5 | [`CornerDetection`](CornerDetection/) | Harris, Shi-Tomasi, and FAST detectors; feature descriptors and matching | `corner_detection_tutorial.ipynb`, `feature_detectors_descriptors.ipynb` | No |
+| 6 | [`SpatialTransformations`](SpatialTransformations/) | Coordinate systems, 2D linear/affine/projective transforms, warping | `2d_transformations.ipynb` | No |
 
 All notebooks are CPU-only. No GPU is needed anywhere in Phase 01.
 

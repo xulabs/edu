@@ -191,7 +191,7 @@ enables:
 | File | Description |
 |------|-------------|
 | `object_detection.ipynb` | YOLOv5 installation and Roboflow dataset setup; `data.yaml` configuration; training from COCO pre-trained weights; training curve visualisation (box loss, objectness loss, classification loss, mAP); validation on held-out images; confidence threshold sweep; inference on new images |
-| `LAP_LapTrack.ipynb` | Loading a 3-D time-lapse volume; instance label centroid extraction; LapTrack configuration and LAP solving; track visualisation in napari; division detection; per-track speed and displacement statistics |
+| `lap_laptrack.ipynb` | Loading a 3-D time-lapse volume; instance label centroid extraction; LapTrack configuration and LAP solving; track visualisation in napari; division detection; per-track speed and displacement statistics |
 
 ---
 

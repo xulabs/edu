@@ -150,7 +150,7 @@ frequency band separately at the splice boundary.
 |------|-------------|
 | `image_filtering.ipynb` | Comprehensive walkthrough: box filter, Gaussian blur, median filter, Laplacian sharpening — each shown spatially and in the Fourier power spectrum, with side-by-side visual comparisons on both a natural photo and a fluorescence microscopy image |
 | `image_filtering_notebook.ipynb` | Companion exercises: parameter sweeps over kernel size and σ, noise addition and denoising benchmarks (PSNR), Butterworth filter design |
-| `Image_Pyramids_and_Frequency_Domain.ipynb` | Gaussian and Laplacian pyramid construction; perfect reconstruction verification; Laplacian-pyramid image blending; frequency-domain visualisation of each pyramid level |
+| `image_pyramids_and_frequency_domain.ipynb` | Gaussian and Laplacian pyramid construction; perfect reconstruction verification; Laplacian-pyramid image blending; frequency-domain visualisation of each pyramid level |
 
 ---
 
