@@ -22,10 +22,9 @@ CryoEM is computationally demanding because the experiment cannot provide clean 
 | [`LocalResolution`](tutorial/LocalResolution/) | Global FSC vs. sliding-window 3D local resolution estimation, ResMap/Blocres, ground-truth validation | `local_resolution_tutorial.ipynb` |
 | [`HeterogeneousReconstruction`](tutorial/HeterogeneousReconstruction/) | Continuous conformational heterogeneity, CryoDRGN coordinate network (implicit neural representation), VAE latent traversal | `CryoDRGN_tutorial.ipynb` |
 | [`CTFEstimation`](tutorial/CTFEstimation/) | CTF theory, Thon rings, radial power spectrum averaging, background subtraction, grid-search defocus fitting, phase-flip correction | `ctf_estimation_tutorial.ipynb` |
+| [`SubtomogramClassification`](tutorial/SubtomogramClassification/) | Machine learning for Cryo-ET subtomogram classification, 3D synthetic particle volume generation (sphere, rod, background), missing-wedge frequency masking, low-SNR simulation, 3D CNN architecture, confusion matrix and precision-recall evaluation | `cryoet_ml_tutorial_PR.ipynb` |
 
-Modules 01, 02, 03, 05, 06, 07, 08, 09, 10, 11, and 12 are CPU/GPU Jupyter notebooks and run on Google Colab. Module 04 is a local software practical requiring IMOD/Etomo on Linux or macOS.
-
-Modules 01, 02, 03, 05, 06, 07, 08, and 09 are CPU/GPU Jupyter notebooks and run on Google Colab. Module 04 is a local software practical requiring IMOD/Etomo on Linux or macOS.
+Modules 01, 02, 03, 05, 06, 07, 08, 09, 10, 11, 12, and 13 are CPU/GPU Jupyter notebooks and run on Google Colab. Module 04 is a local software practical requiring IMOD/Etomo on Linux or macOS.
 
 ---
 
@@ -161,6 +160,16 @@ This module fits the CTF directly from a real experimental apoferritin micrograp
 
 ---
 
+### Module 13 — Machine Learning for Cryo-ET Subtomogram Classification
+
+Cryo-electron tomography reconstructs 3D volumes containing macromolecular complexes embedded in cellular environments. Once candidate particles are detected or cropped into small 3D subvolumes ("subtomograms"), identifying the specific macromolecular complex—or distinguishing true particles from noisy background—presents substantial machine learning challenges due to extremely low signal-to-noise ratio (often < 0.1), anisotropic missing-wedge artifacts, and severe class imbalance.
+
+This module develops a complete end-to-end 3D deep learning classification pipeline from scratch in PyTorch. You will generate synthetic 3D subtomogram datasets with missing-wedge Fourier filtering and noise corruption, build a custom 3D Convolutional Neural Network (`Conv3d`, `MaxPool3d`, `AdaptiveAvgPool3d`), implement a training loop with cross-entropy loss, and evaluate classification performance using multi-class confusion matrices, precision, and recall metrics suitable for imbalanced biomedical data.
+
+**Key skills:** Synthetic 3D subtomogram simulation, 3D Fourier missing-wedge masking, low-SNR noise modeling, PyTorch 3D CNN architecture design, 3D volumetric data loaders, class-imbalanced evaluation (confusion matrices, precision, recall), connections to production tools (`aitom`).
+
+---
+
 ## Learning Goals
 
 After finishing this phase you will be able to:
@@ -198,6 +207,9 @@ After finishing this phase you will be able to:
 - Fit defocus values using grid-search cross-correlation against theoretical CTF models
 - Generate CTFFIND-style split diagnostics comparing experimental and theoretical Thon ring patterns
 - Apply Fourier phase-flip correction to recover phase coherence in experimental micrographs
+- Generate synthetic 3D subtomograms simulating biological complexes and background noise under missing-wedge distortion
+- Build and train 3D CNN classifiers in PyTorch for macromolecular particle classification
+- Evaluate subtomogram classification performance under severe class imbalance using confusion matrices, precision, and recall
 
 ---
 
@@ -225,6 +237,7 @@ After finishing this phase you will be able to:
 | 10 — Local Resolution | CPU only | All NumPy/SciPy/matplotlib; Colab free tier is sufficient |
 | 11 — Heterogeneous Reconstruction (CryoDRGN) | CPU/GPU | Google Colab free tier (T4 GPU recommended for VAE training, CPU supported) |
 | 12 — CTF Estimation | CPU only | All NumPy/SciPy/Pillow; Colab free tier is sufficient |
+| 13 — Subtomogram Classification | CPU/GPU | Google Colab free tier (CPU or T4 GPU) for lightweight 3D CNN training |
 
 ---
 

@@ -158,11 +158,30 @@ Do the cryo-EM section after the image-processing and ML foundations:
 |    29 | `local_resolution_tutorial.ipynb`      | Gold-standard FSC and sliding-window local resolution estimation (ResMap/Blocres) |
 |    30 | `CryoDRGN_tutorial.ipynb`              | Continuous conformational heterogeneity reconstruction with coordinate VAEs |
 |    31 | `ctf_estimation_tutorial.ipynb`        | Fitting defocus from real Thon rings and phase-flip CTF correction |
+|    32 | `cryoet_ml_tutorial_PR.ipynb`          | Machine learning for cryo-ET: synthetic 3D subtomograms, missing-wedge masking, and 3D CNN particle classification |
 
 The `cryoem/tutorial` folder contains these files. ([GitHub][4])
 
 **Goal after Phase 7:**
 You should understand why cryo-EM data are difficult, why low signal-to-noise ratio matters, and how image-processing concepts such as filtering, alignment, reconstruction, and frequency-domain thinking help.
+
+---
+
+## Phase 8 — Machine Learning for Scientists
+
+For statistical learning theory, probabilistic parameter estimation, and high-dimensional regularization:
+
+| Order | Tutorial                                            | What to learn                                                                                         |
+| ----: | --------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+|    33 | `fundamentals of Learning & Uncertainty.ipynb`      | Supervised vs. unsupervised paradigms, probabilistic modeling, MLE vs. MAP parameter estimation       |
+|    34 | `Linear regression methods.ipynb`                   | OLS, Ridge ($L_2$), and Lasso ($L_1$) regression methods and regularization paths                     |
+|    35 | `Ridge_and_Lasso_for_High_Dimensional_Genomics.ipynb` | Regularization, cross-validation, and coordinate descent when $p \gg n$ in genomic applications      |
+|    36 | `ridge_lasso_genomic_prediction_tutorial.ipynb`     | From-scratch genotype-to-phenotype prediction on CIMMYT wheat markers using Ridge and Lasso regression |
+
+These tutorials are in the `ml/tutorial` folder. ([GitHub][5])
+
+**Goal after Phase 8:**
+You should understand why ordinary least squares fails in high dimensions ($p \gg n$), how Gaussian and Laplace priors correspond to Ridge and Lasso penalties, and how regularized models make robust predictions on complex biological marker data.
 
 ---
 
@@ -176,7 +195,7 @@ You should understand why cryo-EM data are difficult, why low signal-to-noise ra
 |    4 | Segmentation/detection/tracking | `segmentation_geo_modified`, `segmentation_deep`, `object_detection`, `lap_laptrack`             |
 |    5 | ML for images                   | `introduction_to_pytorch`, `dimension_reduction_reconstruction`, `geometry_based_classification` |
 |    6 | Medical AI                      | `AI-Driven Clinical Diagnostic Assistant`, `SB_CFM_Medical_Synthesis`, `diffusion models`, `academic_approach_medical_imaging_ml` |
-|    7 | Cryo-EM                         | `cryoem_low_snr_tutorial`, `lowdose_em_denoising_tutorial`, `cryoem_reconstruction_tutorial`, `build_and_diagnose_tomogram`, `subtomogram_averaging_tutorial`, `missing_wedge_wbp_sirt_tutorial`, `motion_correction_tutorial`, `local_resolution_tutorial`, `CryoDRGN_tutorial`, `ctf_estimation_tutorial` |
+|    7 | Cryo-EM                         | `cryoem_low_snr_tutorial`, `lowdose_em_denoising_tutorial`, `cryoem_reconstruction_tutorial`, `build_and_diagnose_tomogram`, `subtomogram_averaging_tutorial`, `missing_wedge_wbp_sirt_tutorial`, `motion_correction_tutorial`, `local_resolution_tutorial`, `CryoDRGN_tutorial`, `ctf_estimation_tutorial`, `cryoet_ml_tutorial_PR` |
 
 ---
 
@@ -251,3 +270,4 @@ For a cryo-EM-focused project, use the low-SNR cryo-EM tutorial and vary the noi
 [2]: https://raw.githubusercontent.com/xulabs/edu/main/guide/Tutorial_Creation.md "raw.githubusercontent.com"
 [3]: https://github.com/xulabs/edu/tree/main/sci_img/tutorial "edu/sci_img/tutorial at main · xulabs/edu · GitHub"
 [4]: https://github.com/xulabs/edu/tree/main/cryoem/tutorial "edu/cryoem/tutorial at main · xulabs/edu · GitHub"
+[5]: https://github.com/xulabs/edu/tree/main/ml/tutorial "edu/ml/tutorial at main · xulabs/edu · GitHub"
