@@ -35,7 +35,8 @@ Phase 02 — Spatial Perception & Analysis
   ├─ 01 Object Detection & Tracking (YOLOv5 + LAP)
   ├─ 02 Image Alignment & Registration (SimpleITK + Pix2Pix)
   ├─ 03 Stereo Vision & Depth Estimation
-  └─ 04 Self-Supervised Bioimage Denoising (Noise2Void / Noise2Self)
+  ├─ 04 Self-Supervised Bioimage Denoising (Noise2Void / Noise2Self)
+  └─ 05 Spatial Omics & Multiplexed Imaging (Neighborhood Graphs & Niches)
 
 Phase 03 — Advanced Medical AI
   ├─ 01 3-D Volumetric Segmentation with MONAI
@@ -182,7 +183,8 @@ tutorial/
 │   ├── ObjectDetectTracking/
 │   ├── ImageAlignmentRegister/
 │   ├── StereoVision/
-│   └── BioimageDenoising/
+│   ├── BioimageDenoising/
+│   └── SpatialOmics/
 ├── AdvancedMedicalAI/
 │   ├── README.md
 │   ├── Volume3DSegmentation/

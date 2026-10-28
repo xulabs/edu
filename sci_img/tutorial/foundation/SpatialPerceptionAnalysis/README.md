@@ -16,6 +16,7 @@ Phase 01 gave you the vocabulary: tensors, filters, features. Phase 02 is about 
 | 4 | [`ImageAlignmentRegister`](ImageAlignmentRegister/) | SimpleITK registration, Pix2Pix GAN translation | `image_registration.ipynb`, `image_translation.ipynb` | Yes (Pix2Pix) |
 | 5 | [`StereoVision`](StereoVision/) | Stereo geometry, DLT triangulation, block matching (SAD/SSD/NCC), rectification | `stereo.ipynb` | No |
 | 6 | [`BioimageDenoising`](BioimageDenoising/) | Self-supervised denoising, Noise2Void, Noise2Self, classical baselines | `self_supervised_bioimage_denoising.ipynb` | Yes |
+| 7 | [SpatialOmics](SpatialOmics/) | Spatial neighborhood graph construction, cellular microenvironment composition vectors, cell-cell contact matrices, and spatial tissue niche mapping | Multiplexed Imaging and Spatial Omics.ipynb | No |
 
 All GPU-using notebooks fall back to CPU automatically — training will be slower but the pipeline still runs.
 
@@ -98,6 +99,20 @@ You will study the theoretical foundations of **Noise2Void** and **Noise2Self**,
 **Key skills:** Noise2Void blind-spot masking, Noise2Self J-invariance, classical filtering baselines, PyTorch self-supervised training loop, structural preservation validation, FRC.
 
 **Connects to:** Phase 04, Module 01 (Noise2Void is the leading self-supervised denoiser for low-SNR cryoEM micrographs).
+
+---
+
+### Module 07 — Spatial Omics & Multiplexed Imaging
+
+Complex tissues are organized microenvironments where cell function and signaling depend critically on spatial proximity and architecture. This module models single-cell spatial biology derived from multiplexed microscopy and spatial omics platforms:
+- **Synthetic Tissue Modeling:** Simulating histological tissue compartments including dense tumor cores, infiltrating immune margins (T-cells), and surrounding stromal structures.
+- **Spatial Neighborhood Graphs:** Constructing spatial connectivity networks using metric ball-tree neighbor searches under defined physical radii.
+- **Cellular Microenvironment Quantification:** Computing local composition vectors that measure the phenotypic makeup of each cell's microenvironment.
+- **Spatial Interaction & Niche Analysis:** Formulating cell-cell interaction matrices that quantify homotypic clustering and heterotypic infiltration dynamics across the tissue architecture.
+
+**Key skills:** sklearn.neighbors.NearestNeighbors, spatial graph construction, neighborhood composition vectors, cell-cell interaction matrices, spatial tissue niche visualization.
+
+**Connects to:** BiologyToBioimage Module 31 (Spatial Omics and Multiplexed Imaging); BiologyToML Module 33 (Spatial Omics).
 
 ---
 

@@ -18,6 +18,7 @@ This tutorial series covers the foundational mathematical and computational fram
 | 03 | [`GenerativeDiscriminativeClassification`](GenerativeDiscriminativeClassification/) | Non-parametric $k$-NN, generative Gaussian Naive Bayes ($P(X \mid Y)$ with conditional independence), discriminative Logistic Regression ($P(Y \mid X)$ via cross-entropy loss), decision boundaries, and probability calibration under correlated features | `8. ML classification KNN & NB.ipynb`<br>`naive_bayes_vs_logreg_tutorial.ipynb` |
 | 04 | [`DecisionTreesRandomForests`](DecisionTreesRandomForests/) | Non-linear tree architectures (CART, Gini impurity), variance reduction via bagging and random feature subspace sampling (Random Forests), feature importance (MDI vs. permutation), and TCGA cancer driver mutation classification | `random_forest_driver_mutation_tutorial.ipynb` |
 | 05 | [`ConformalPrediction`](ConformalPrediction/) | Distribution-free predictive uncertainty quantification, finite-sample split conformal regression intervals, locally adaptive prediction bands, conformal classification prediction sets, and clinical distribution-shift auditing | `Conformal_Prediction_for_Trustworthy_Biomedical_Models.ipynb` |
+| 06 | [`GaussianMixtureModels`](GaussianMixtureModels/) | Unsupervised latent density estimation, Expectation-Maximization (EM) derivations from scratch, covariance geometry (spherical/diagonal/full), BIC model selection, soft assignments, and species discovery | `gmm_penguin_species_tutorial.ipynb` |
 | — | [`BiologyToML`](BiologyToML/) | Full self-study course for biology majors: Level 1 covers every 02-620 topic (Parts A–E); Level 2 covers the research frontier (Parts F–I: modern ML building blocks, cells and tissues, genomes/proteins/molecules, causality/reliability/AI); capstone (Part J) | `notebooks/00_…` – `notebooks/44_…` (45 notebooks) |
 
 ---
@@ -66,6 +67,15 @@ Point predictions and raw softmax probabilities fail to quantify whether a biome
 - **Calibrated Prediction Sets:** Replacing forced single-class diagnosis with Adaptive Prediction Sets (APS) of plausible disease classes.
 - **Subgroup & Distribution-Shift Auditing:** Auditing demographic subgroups for hidden undercoverage and stress-testing models against covariate and concept shifts when transferring across clinical sites.
 - **Responsible Translation:** Translating statistical coverage into safe clinical decision support without conflating prediction intervals with confidence or causal intervals.
+
+### Module 06 — Gaussian Mixture Models & Expectation-Maximization
+
+Unlabeled latent groupings abound in biological data, from cell subtypes in single-cell panels to cryptic species in ecological surveys. Hard clustering algorithms fail when clusters vary in volume, overlap, or exhibit directional correlations. This module builds probabilistic mixture modeling from first principles:
+- **Latent Variable Modeling:** Formulating mixture distributions (x) = \sum_{k=1}^K \pi_k \mathcal{N}(x \mid \mu_k, \Sigma_k)$ with unobserved component indicators $.
+- **The EM Algorithm:** Deriving the E-step (computing posterior responsibilities $\gamma_{ik}$) and M-step (responsibility-weighted closed-form parameter updates) with guaranteed monotonic likelihood ascent.
+- **Covariance Geometry:** Implementing spherical, diagonal, and full covariance matrices and analyzing their parameter efficiency vs. geometric flexibility.
+- **Model Selection via BIC:** Sweeping component counts $ and covariance types to identify the optimal balance between likelihood fit and parameter penalty.
+- **Species Discovery on Real Data:** Applying from-scratch GMMs to 333 wild Palmer penguins (labels hidden during fitting) to evaluate unsupervised rediscovery of species boundaries and diagnose morphologically ambiguous samples via soft responsibilities.
 
 ### BiologyToML — From Biology to Machine Learning (02-620 and beyond)
 
