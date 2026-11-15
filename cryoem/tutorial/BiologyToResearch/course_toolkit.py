@@ -806,7 +806,11 @@ def matrix_to_euler_zyz(R):
     """Inverse of :func:`euler_zyz_to_matrix` (one of the two equivalent solutions)."""
     theta = np.arccos(np.clip(R[2, 2], -1, 1))
     if np.isclose(np.sin(theta), 0):
-        return np.arctan2(R[1, 0], R[0, 0]), theta, 0.0
+        # Degenerate case (gimbal lock): only a combination of phi and psi is defined, so set psi = 0.
+        if R[2, 2] > 0:   # theta = 0:  R = Rz(phi + psi)
+            return np.arctan2(R[1, 0], R[0, 0]), theta, 0.0
+        # theta = pi: R = Rz(phi - psi) Ry(pi), so R[0, 0] = -cos(phi - psi) and R[1, 0] = -sin(phi - psi)
+        return np.arctan2(-R[1, 0], -R[0, 0]), theta, 0.0
     return np.arctan2(R[1, 2], R[0, 2]), theta, np.arctan2(R[2, 1], -R[2, 0])
 
 
