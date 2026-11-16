@@ -31,7 +31,7 @@ In biomedical and scientific classification problems—such as distinguishing ma
 
 | File | Description |
 |------|-------------|
-| [`8. ML classification KNN & NB.ipynb`](8.%20ML%20classification%20KNN%20%26%20NB.ipynb) | Hands-on tutorial exploring instance-based $k$-NN versus generative Gaussian Naive Bayes, evaluating hyperparameter $k$, decision boundary geometry, and ROC metrics on synthetic biological measurements. |
+| [`8. ML classification KNN & NB.ipynb`](8.%20ML%20classification%20KNN%20%26%20NB.ipynb) | Hands-on tutorial comparing instance-based $k$-NN with generative Gaussian Naive Bayes on the Wisconsin Breast Cancer data: from-scratch NumPy implementations, feature scaling, choosing $k$ by cross-validation, irrelevant and correlated features, ROC/AUC, threshold choice, calibration and learning curves. |
 | [`naive_bayes_vs_logreg_tutorial.ipynb`](naive_bayes_vs_logreg_tutorial.ipynb) | Rigorous from-scratch tutorial contrasting Gaussian Naive Bayes and Logistic Regression on the Wisconsin Breast Cancer dataset, evaluating the impact of correlated features, decision contours, and reliability calibration. |
 
 ---
