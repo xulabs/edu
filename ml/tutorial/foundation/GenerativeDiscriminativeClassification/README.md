@@ -32,7 +32,7 @@ In biomedical and scientific classification problems—such as distinguishing ma
 | File | Description |
 |------|-------------|
 | [`8. ML classification KNN & NB.ipynb`](8.%20ML%20classification%20KNN%20%26%20NB.ipynb) | Hands-on tutorial exploring instance-based $k$-NN versus generative Gaussian Naive Bayes, evaluating hyperparameter $k$, decision boundary geometry, and ROC metrics on synthetic biological measurements. |
-| [`naive_bayes_vs_logreg_tutorial.ipynb`](naive_bayes_vs_logreg_tutorial.ipynb) | Rigorous from-scratch tutorial contrasting Gaussian Naive Bayes and Logistic Regression on the Wisconsin Breast Cancer dataset, evaluating the impact of correlated features, decision contours, and reliability calibration. |
+| [`naive_bayes_vs_logreg_tutorial.ipynb`](naive_bayes_vs_logreg_tutorial.ipynb) | Rigorous from-scratch tutorial contrasting Gaussian Naive Bayes and Logistic Regression on the Wisconsin Breast Cancer dataset. Verifies both implementations against scikit-learn, compares the models over 100 random splits, measures probability quality (Brier score, log-loss, ECE with bootstrap intervals), tests *why* Naive Bayes is overconfident with feature-correlation ablations, and repairs the probabilities with Platt scaling and isotonic regression. |
 
 ---
 
