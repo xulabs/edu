@@ -25,7 +25,7 @@ production tools are named.
 | A modernised 02-620 (Levels 1 + 2) | the week-by-week map in §4 | Level 2 modules cover count models, VAEs, attention, single-cell, sequence and protein ML, perturbations, uncertainty, generative models and experiment design |
 | Second course / graduate elective (Level 2) | Part F (24–29) in weeks 1–6, then one or two application parts (G, H or I) and the capstone tracks | assumes Level 1; each module is ~3 h of guided work plus exercises |
 | Bridge for incoming students | Modules 00–14 over a summer (≈ 7 h/week for 10 weeks), Parts D–E during the semester | front-loads the mathematics most students struggle with in weeks 2–6 |
-| Lab onboarding / rotations | Part A, the Level 1 part matching the student's project, then the matching Level 2 track and a capstone track | pair with the topic tutorials in [`ml/tutorial`](../README.md) |
+| Lab onboarding / rotations | Part A, the Level 1 part matching the student's project, then the matching Level 2 track and a capstone track | pair with the topic tutorials in [`ml/tutorial/foundation`](../foundation/README.md) |
 
 **Before week 1.** Ask students to open Module 00 in Colab and run it top to bottom (≈ 1 minute)
 to catch account and browser problems early. No downloads are needed: every data set is
