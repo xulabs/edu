@@ -335,12 +335,12 @@ The notebooks are stored **without outputs**.
 
 ## Going deeper in this repository
 
-The topic tutorials in [`ml/tutorial`](../README.md) are natural next steps after the matching
-modules: [`FundamentalsLearningUncertainty`](../FundamentalsLearningUncertainty/) (after 05),
-[`RegularizedLinearRegression`](../RegularizedLinearRegression/) — ridge and lasso on wheat genomic
-data (after 07), [`GenerativeDiscriminativeClassification`](../GenerativeDiscriminativeClassification/)
-(after 09), [`DecisionTreesRandomForests`](../DecisionTreesRandomForests/) — random forests on TCGA
-driver mutations (after 10), and [`ConformalPrediction`](../ConformalPrediction/) — distribution-free
+The topic tutorials in [`ml/tutorial/foundation`](../foundation/README.md) are natural next steps after the matching
+modules: [`FundamentalsLearningUncertainty`](../foundation/FundamentalsLearningUncertainty/) (after 05),
+[`RegularizedLinearRegression`](../foundation/RegularizedLinearRegression/) — ridge and lasso on wheat genomic
+data (after 07), [`GenerativeDiscriminativeClassification`](../foundation/GenerativeDiscriminativeClassification/)
+(after 09), [`DecisionTreesRandomForests`](../foundation/DecisionTreesRandomForests/) — random forests on TCGA
+driver mutations (after 10), and [`ConformalPrediction`](../foundation/ConformalPrediction/) — distribution-free
 uncertainty for biomedical models (after 23 and 42). For imaging, see
 [`sci_img`](../../../sci_img/tutorial/README.md); for structural biology, the sister course
 [Cryo-ET and cryo-EM from biology to research](../../../cryoem/tutorial/BiologyToResearch/README.md)
