@@ -651,7 +651,7 @@ def wiener_deconvolve(degraded: np.ndarray, psf: np.ndarray, noise_to_signal: fl
     psf_padded = np.zeros((h, w))
     ph, pw = psf.shape
     psf_padded[:ph, :pw] = psf
-    psf_padded = np.roll(psf_padded, (-ph // 2, -pw // 2), axis=(0, 1))
+    psf_padded = np.roll(psf_padded, (-(ph // 2), -(pw // 2)), axis=(0, 1))
     H = np.fft.fft2(psf_padded)
     G = np.fft.fft2(degraded)
     Hc = np.conj(H)
